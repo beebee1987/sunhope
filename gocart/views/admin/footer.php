@@ -26,7 +26,8 @@
 <!-- Custom and plugin javascript -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/inspinia.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/pace/pace.min.js');?>"></script>
-
+<!-- DROPZONE -->
+<script src="js/plugins/dropzone/dropzone.js"></script>
 
 <!--script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery-ui/jquery-ui.min.js');?>"></script-->
 
@@ -48,9 +49,23 @@
 <!-- SUMMERNOTE -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/summernote/summernote.min.js');?>"></script>
 
+ <!-- Jasny -->
+<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+<!-- CodeMirror -->
+<script src="js/plugins/codemirror/codemirror.js"></script>
+<script src="js/plugins/codemirror/mode/xml/xml.js"></script>
+
 <script type="text/javascript">
 
 //$('.summernote').summernote();
+
+Dropzone.options.dropzoneForm = {
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 2, // MB
+    dictDefaultMessage: "<strong>Drop files here or click to upload. </strong></br> (This is just a demo dropzone. Selected files are not actually uploaded.)"
+};
+
 $(document).ready(function(){
 select_voucher();
 $('#summernote').summernote({

@@ -20,6 +20,11 @@
 <link type="text/css" href="<?php echo base_url('assets/css/plugins/summernote/summernote.css');?>" rel="stylesheet" />
 <link type="text/css" href="<?php echo base_url('assets/css/plugins/summernote/summernote-bs3.css');?>" rel="stylesheet" />
 
+<link type="text/css" href="<?php echo base_url('assets/css/plugins/dropzone/basic.css');?>" rel="stylesheet" />
+<link type="text/css" href="<?php echo base_url('assets/css/plugins/dropzone/dropzone.css');?>" rel="stylesheet" />
+<link type="text/css" href="<?php echo base_url('assets/css/plugins/jasny/jasny-bootstrap.min.css');?>" rel="stylesheet" />
+<link type="text/css" href="<?php echo base_url('assets/css/plugins/codemirror/codemirror.css');?>" rel="stylesheet" />
+
 
 </head>
 
