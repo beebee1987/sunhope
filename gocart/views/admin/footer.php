@@ -27,7 +27,7 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/inspinia.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/pace/pace.min.js');?>"></script>
 <!-- DROPZONE -->
-<script src="js/plugins/dropzone/dropzone.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/plugins/dropzone/dropzone.js');?>"></script>
 
 <!--script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery-ui/jquery-ui.min.js');?>"></script-->
 
@@ -50,11 +50,13 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/summernote/summernote.min.js');?>"></script>
 
  <!-- Jasny -->
-<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+ <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jasny/jasny-bootstrap.min.js');?>"></script>
+
 
 <!-- CodeMirror -->
-<script src="js/plugins/codemirror/codemirror.js"></script>
-<script src="js/plugins/codemirror/mode/xml/xml.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/plugins/codemirror/codemirror.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/plugins/codemirror/mode/xml/xml.js');?>"></script>
+
 
 <script type="text/javascript">
 
