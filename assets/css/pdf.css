@@ -1,0 +1,37 @@
+.table_header
+{
+	font-size: 11px;
+	background: #31708f !important;
+	color: #bce8f1 !important;
+	text-align: center;
+}
+.unpaid_table_header
+{
+	background: #eed3d7;
+	font-size: 12px;
+	color: #b94a48;
+	border-color: #eed3d7;
+}
+.unpaid_table
+{
+	color: #b94a48;
+	border: 1px solid #eed3d7;
+}
+.table_header th{
+vertical-align: middle !important;
+}
+
+td {
+padding-bottom: 10px !important;
+padding-top: 10px !important;
+}
+
+.no-cell-border td, .no-border
+{
+	border: none !important;
+}
+
+.transaction-row td 
+{
+
+}

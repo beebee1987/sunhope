@@ -1,0 +1,32 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 70px;
+  padding-bottom: 20px; 
+  background: url(../img/white.jpg) no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
+
+@media (max-width: 768px){
+	body {
+	  padding-top: 50px;	
+	}
+}
+
+.jumbotron{
+	background-color: rgba(39,181,207,0.6);
+}
+
+.jumbotron p{
+	color: #4624f1;
+}
+
+.jumbotron  h1{
+	color:#207046;
+}
+
+.row  h2{
+	color:#e2373e;
+}

@@ -1,0 +1,46 @@
+.print-display{
+	display: none !important;
+}
+
+/* Printing Query
+/*-----------------------------------------------------------------------------------*/
+@page
+{	   
+	    size: portrait;
+	    margin: 0;
+}
+
+@media print {	
+	body{
+		font-family: Georgia, serif;
+		background: none;
+		color: black;		
+		margin-left: -222px;
+	}
+	
+	.pages_container{
+		page-break-inside: avoid;
+		margin:0; background-color:#ffffff; padding:20px 2.5%; border:1px #ffffff solid; width:90%;
+		
+		
+	}
+	
+	#wrapper{
+	
+		margin-left: 0px;
+	}
+
+	.no-print, .no-print *
+    {
+        display: none !important;
+    }
+    
+    .print-display, .print-display *
+    {
+        display: block !important;
+    }	
+    
+    .navbar{
+    	display: none !important;
+    }
+}
