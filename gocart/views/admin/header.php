@@ -144,6 +144,20 @@
 	                    </ul>
 	                </li>
                 <?php endif;?>
+                
+                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'messages') ? 'class="active"' : ''; ?>>
+                    <a href="#"><i class="fa fa-vimeo-square"></i> <span class="nav-label"><?php echo lang('common_messages');?></span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="<?php echo $admin_url;?>messages"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_messages') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
+                    </ul>
+                </li>
+
+                 <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'clients') ? 'class="active"' : ''; ?>>
+                    <a href="#"><i class="fa fa-vimeo-square"></i> <span class="nav-label"><?php echo lang('common_clients');?></span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="<?php echo $admin_url;?>clients"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_clients') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
+                    </ul>
+                </li>
                                                        
             </ul>
 
