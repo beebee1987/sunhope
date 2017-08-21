@@ -84,7 +84,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                             <a href="#news">News</a>
                         </li-->
                         <li class="page-scroll">
-                            <a href="#portfolio">Portfolio</a>
+                            <a href="#projects">Projects</a>
                         </li>
                         <li class="page-scroll">
                             <a href="#contact">Contact</a>
@@ -162,8 +162,15 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
             <div class="container">
                 <div class="title-v1">
                     <h1>We are Sun Hope Engineering</h1>
-                    <p>Sun Hope Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum  <br>
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum.</p>
+                    <p>Beginning with the inception of Sun Hope Engineering in 1996 and later the establishment
+                    Sun Hope Industry Sdn Bhd in 2002. Sun Hope has evolved from fledgling company that
+                    relied mostly on referral business to a competent and established corporation that
+                    successfully secures and undertakes various projects from both local and multinational
+                    companies
+                    As a specialized yet total services provider in the M&E Engineering sector within three
+                    primary industries – Oil & Gas, Manufacturing/Assembly Plants and Marine.
+                    We look forward to the opportunity to provide solutions to meet your engineering needs!!
+                    </p>
                 </div>
                 <div class="img-center">
                     <img class="img-responsive" src="<?php echo base_url('uploads/about/about_us.jpg')?>" alt="">
@@ -467,10 +474,10 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
     <!-- End News Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="about-section">
+    <section id="projects" class="about-section">
         <div class="container content-lg">
             <div class="title-v1">
-                <h2>Our Portfolio</h2>
+                <h2>Latest Projects</h2>
                 <p>We do <strong>things</strong> differently company providing.</p>
             </div>
 
@@ -765,8 +772,8 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
                     <ul class="list-unstyled">
                         <li><i class="fa fa-home"></i> Lot 10957, 4 1/2 Miles, Jalan Kebun, 41000 Klang, Selangor Darul Ehsan, West Malaysia</li>
                         <li><i class="fa fa-phone"></i> 03-5162 5534</li>
-                        <li><i class="fa fa-fax"></i> 03-5161 9837</li>
-                        <li><i class="fa fa-home"></i> Working hours: 9am - 7pm (Weekday) </li>
+                        <li><i class="fa fa-fax"></i> 03-5167 1797</li>
+                        <li><i class="fa fa-home"></i> Working hours: 8am - 5pm (Monday - Saturday) </li>
                         <li><i class="fa fa-envelope"></i> <a href="waichoon_lee@hotmail.com">waichoon_lee@hotmail.com</a></li>
                         <li><i class="fa fa-globe"></i> <a href="www.sunhope.my">www.sunhope.my</a></li>
                     </ul>

@@ -222,6 +222,8 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
 .title-v1 p {
   font-size: 17px;
   font-weight: 200;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /*Heading Titles v2*/
