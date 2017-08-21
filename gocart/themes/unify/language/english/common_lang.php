@@ -168,6 +168,8 @@ $lang['address_zip']			= 'Zip';
 $lang['address_country']			= 'Country';
 $lang['address_state']				= 'State';
 $lang['message_address_saved']		= 'Your address has been saved!';
+$lang['contact_message_saved']		= 'Hi %s,  Your message has been successfully sent. We will contact you very soon!';
+
 
 $lang['default']					= 'Default';
 $lang['additional_order_details']	= 'Additional Order Details';
@@ -203,6 +205,7 @@ $lang['giftcard_message']			= 'Personal Message';
 $lang['giftcard_excerpt']			= 'Gift Card for a friend<br/>To: %s';
 
 $lang['email']						= 'Email';
+$lang['message']						= 'Message';
 $lang['password']					= 'Password';
 $lang['confirm_password']			= 'Confirm Password';
 $lang['return_to_login']			= 'Return to Login';

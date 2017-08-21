@@ -208,6 +208,7 @@ $lang['giftcard_message']			= 'Personal Message';
 $lang['giftcard_excerpt']			= 'Gift Card for a friend<br/>To: %s';
 
 $lang['email']						= 'Email';
+$lang['message']						= 'Message';
 $lang['phone']						= 'Phone Number';
 $lang['password']					= 'Password';
 $lang['confirm_password']			= 'Confirm Password';
