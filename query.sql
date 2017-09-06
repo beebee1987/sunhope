@@ -26,6 +26,6 @@ CREATE TABLE `projects_products` (
   `category` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `upload_date` date DEFAULT NULL,
-  `Status` varchar(20) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
