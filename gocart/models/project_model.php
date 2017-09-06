@@ -41,21 +41,21 @@ class Project_model extends CI_Model
 	// add project, returns id
 	function add_project($data) 
 	{
-		$this->db->insert('projects', $data);
+		$this->db->insert('projects_products', $data);
 		return $this->db->insert_id();
 	}
 	
 	// update project
 	function update_project($id, $data)
 	{
-		$this->db->where('id', $id)->update('projects', $data);
+		$this->db->where('id', $id)->update('projects_products', $data);
 	}
 	
 	// delete project
 	function delete_project($id)
 	{
 		$this->db->where('id', $id);
-		$this->db->delete('projects');
+		$this->db->delete('projects_products');
 	
 		// delete children
 		$this->remove_product($id);
@@ -114,7 +114,7 @@ class Project_model extends CI_Model
 		// for merchant || branch can view only own data
 		
 		
-		return $this->db->get('projects')->result();
+		return $this->db->get('projects_products')->result();
 	}
 	
 	// get project details, by id
