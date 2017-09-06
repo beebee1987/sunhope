@@ -37,6 +37,7 @@ $lang['project_listing']		= 'Project Listing';
 
 
 $lang['message_project_deleted']	= 'The project has been deleted.';
+$lang['message_project_uploaded']	= 'The image has been uploaded.';
 $lang['attributes']				= 'Attributes';
 $lang['applies_to']				= 'Applies To';
 $lang['project_code']			= 'Project Code';

@@ -27,55 +27,58 @@ class Projects extends Admin_Controller {
 	}
 	
 	
-	function form($id = false)
+	function form($upload_true = true)
 	{
             $data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
-		$today_date 	= date("Ymd");
-		//die(print_r($_POST));
-
-		$this->load->helper(array('form', 'date', 'url'));
-		
-		$folderName = 'uploads/project/'.$today_date.'/';
-		$config['upload_path']		= $folderName;		
-		if (!is_dir($folderName)) {
-			mkdir($folderName, 0777, TRUE);
-			//mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
-		}				
-		
-		$config['allowed_types']	= 'gif|jpg|png';
-		$config['max_size']			= $this->config->item('size_limit');
-		$config['encrypt_name']		= true;
-		$this->load->library('upload', $config);
+            if($upload_true){
+                $this->session->set_flashdata('message', lang('message_project_deleted'));
+            }
+//		$today_date 	= date("Ymd");
+//		//die(print_r($_POST));
+//
+//		$this->load->helper(array('form', 'date', 'url'));
+//		
+//		$folderName = 'uploads/project/';
+//		$config['upload_path']		= $folderName;		
+//		if (!is_dir($folderName)) {
+//			mkdir($folderName, 0777, TRUE);
+//			//mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
+//		}				
+//		
+//		$config['allowed_types']	= 'gif|jpg|png';
+//		$config['max_size']			= $this->config->item('size_limit');
+//		$config['encrypt_name']		= true;
+//		$this->load->library('upload', $config);
 		$this->load->library('form_validation');
 		
 				
-		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-		
-		$this->project_id	= $id;
+//		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+//		
+//		$this->project_id	= $id;
 		
 		$data['page_title']		= lang('project_form');
 		
 		//default values are empty if the product is new
-		$data['id']						= '';
-		$data['code']					= '';
-		$data['name']					= '';
-		$data['start_date']				= '';
-		$data['whole_order_project']	= 1;
-		$data['max_product_instances'] 	= '';
-		$data['end_date']				= '';
-		$data['max_uses']				= '';
-		$data['reduction_target'] 		= 'price';
-		$data['reduction_type']			= '';
-		$data['reduction_amount']		= '';
-		$data['point_consume']			= '';	
-		$data['credit_consume']			= '';
-		$data['image']					= '';
-		$data['desc']					= '';
-		$data['branch_id']  			= '';
+//		$data['id']						= '';
+//		$data['code']					= '';
+//		$data['name']					= '';
+//		$data['start_date']				= '';
+//		$data['whole_order_project']	= 1;
+//		$data['max_product_instances'] 	= '';
+//		$data['end_date']				= '';
+//		$data['max_uses']				= '';
+//		$data['reduction_target'] 		= 'price';
+//		$data['reduction_type']			= '';
+//		$data['reduction_amount']		= '';
+//		$data['point_consume']			= '';	
+//		$data['credit_consume']			= '';
+//		$data['image']					= '';
+//		$data['desc']					= '';
+//		$data['branch_id']  			= '';
+//		
+//		$added = array();
 		
-		$added = array();
-		
-		if ($id)
+//		if ($id)
 //		{	
 //			$project		= $this->Project_model->get_project($id);
 //
@@ -116,22 +119,22 @@ class Projects extends Admin_Controller {
 			$this->form_validation->set_rules('branch_id', 'lang:branch', 'trim|required');
 		endif;		
 		
-		$this->form_validation->set_rules('code', 'lang:code', 'trim|required|callback_check_code');	
-		$this->form_validation->set_rules('name', 'lang:name', 'trim|required');
-		$this->form_validation->set_rules('max_uses', 'lang:max_uses', 'trim|numeric');
-		$this->form_validation->set_rules('max_product_instances', 'lang:limit_per_order', 'trim|numeric');
-		$this->form_validation->set_rules('whole_order_project', 'lang:whole_order_discount');
-		//$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim|required');
-		$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim');
-		$this->form_validation->set_rules('reduction_type', 'lang:reduction_type', 'trim');
-		$this->form_validation->set_rules('reduction_amount', 'lang:reduction_amount', 'trim|numeric');
-		$this->form_validation->set_rules('point_consume', 'lang:point_consume', 'trim|numeric');
-		$this->form_validation->set_rules('credit_consume', 'lang:credit_consume', 'trim|numeric');
-		$this->form_validation->set_rules('image', 'lang:image', 'trim');
-		$this->form_validation->set_rules('desc', 'lang:desc', 'trim');
-		
-		$this->form_validation->set_rules('start_date', 'lang:start_date');
-		$this->form_validation->set_rules('end_date', 'lang:end_date');
+//		$this->form_validation->set_rules('code', 'lang:code', 'trim|required|callback_check_code');	
+//		$this->form_validation->set_rules('name', 'lang:name', 'trim|required');
+//		$this->form_validation->set_rules('max_uses', 'lang:max_uses', 'trim|numeric');
+//		$this->form_validation->set_rules('max_product_instances', 'lang:limit_per_order', 'trim|numeric');
+//		$this->form_validation->set_rules('whole_order_project', 'lang:whole_order_discount');
+//		//$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim|required');
+//		$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim');
+//		$this->form_validation->set_rules('reduction_type', 'lang:reduction_type', 'trim');
+//		$this->form_validation->set_rules('reduction_amount', 'lang:reduction_amount', 'trim|numeric');
+//		$this->form_validation->set_rules('point_consume', 'lang:point_consume', 'trim|numeric');
+//		$this->form_validation->set_rules('credit_consume', 'lang:credit_consume', 'trim|numeric');
+//		$this->form_validation->set_rules('image', 'lang:image', 'trim');
+//		$this->form_validation->set_rules('desc', 'lang:desc', 'trim');
+//		
+//		$this->form_validation->set_rules('start_date', 'lang:start_date');
+//		$this->form_validation->set_rules('end_date', 'lang:end_date');
 		
 		// create product list
 		
@@ -143,113 +146,113 @@ class Projects extends Admin_Controller {
 		else
 		{
 			
-			$this->load->helper('text');
-			$uploaded	= $this->upload->do_upload('image');
-			
-			$save['id']						= $id;
-			$save['code']					= $this->input->post('code');
-			$save['name']					= $this->input->post('name');
-			$save['start_date']				= format_ymd_malaysia($this->input->post('start_date'));
-			$save['end_date']				= format_ymd_malaysia($this->input->post('end_date'));
-			$save['max_uses']				= $this->input->post('max_uses');
-			$save['whole_order_project'] 	= 1;
-			//$save['whole_order_project'] 	= $this->input->post('whole_order_project');
-			$save['max_product_instances'] 	= $this->input->post('max_product_instances');
-			//$save['reduction_target']		= $this->input->post('reduction_target');
-			$save['reduction_target']		= 'price';
-			$save['reduction_type']			= $this->input->post('reduction_type');
-			$save['reduction_amount']		= $this->input->post('reduction_amount');
-			$save['point_consume']			= $this->input->post('point_consume');
-			$save['credit_consume']			= $this->input->post('credit_consume');
-			$save['desc']					= $this->input->post('desc');
-			$save['staff_id']				= $this->current_admin['id'];
-			$save['created_date']			= date('Y-m-d H:i:s');
-						
-			//Checking for super admin
-			if($this->current_admin['branch'] == 0):
-				$save['branch_id']					= $this->input->post('branch_id');
-			else:
-				$save['branch_id']					= $this->current_admin['branch'];
-			endif;			
-			
-
-			if($save['start_date']=='')
-			{
-				$save['start_date'] = null;
-			}
-			if($save['end_date']=='')
-			{
-				$save['end_date'] = null;
-			}
-			
-			$product = $this->input->post('product');
-			
-			if ($id)
-			{	
-				//delete the original file if another is uploaded
-				if($uploaded)
-				{
-					if($data['image'] != '')
-					{
-						//$file = 'uploads/'.$data['image'];
-						//$config['upload_path'] = FCPATH . 'uploads/';						 						
-						
-						$file = $folderName.$data['image'];												
-							
-						//delete the existing file if needed
-						if(file_exists($file))
-						{
-							unlink($file);
-						}
-					}
-				}
-					
-			}
-			else
-			{
-				if(!$uploaded)
-				{
-					$data['error']	= $this->upload->display_errors();
-					$this->view(config_item('admin_folder').'/project_upload_form', $data);
-					return; //end script here if there is an error
-				}
-			}
-			
-			if($uploaded)
-			{
-				if (!is_dir($folderName)) {
-					mkdir($folderName, 0777, TRUE);
-					//mkdir('./uploads/project/' . $today_date.'/thumbs', 0777, TRUE);
-				}
-								
-				$image			= $this->upload->data();
-															
-				$save['image']  = $folderName.$image['file_name'];
-				//$save['image']	= $image['file_name'];
-			}
-			
-			
-			
-			// save project
-			$promo_id = $this->Project_model->save($save);
-			
-			// save products if not a whole order project
-			//   clear products first, then save again (the lazy way, but sequence is not utilized at the moment)
-			$this->Project_model->remove_product($id);
-			
-			if(!$save['whole_order_project'] && $product) 
-			{
-				while(list(, $product_id) = each($product))
-				{
-					$this->Project_model->add_product($promo_id, $product_id);
-				}
-			}
-			
-			// We're done
-			$this->session->set_flashdata('message', lang('message_saved_project'));
-			
-			//go back to the product list
-			redirect($this->config->item('admin_folder').'/projects');
+//			$this->load->helper('text');
+//			$uploaded	= $this->upload->do_upload('image');
+//			
+//			$save['id']						= $id;
+//			$save['code']					= $this->input->post('code');
+//			$save['name']					= $this->input->post('name');
+//			$save['start_date']				= format_ymd_malaysia($this->input->post('start_date'));
+//			$save['end_date']				= format_ymd_malaysia($this->input->post('end_date'));
+//			$save['max_uses']				= $this->input->post('max_uses');
+//			$save['whole_order_project'] 	= 1;
+//			//$save['whole_order_project'] 	= $this->input->post('whole_order_project');
+//			$save['max_product_instances'] 	= $this->input->post('max_product_instances');
+//			//$save['reduction_target']		= $this->input->post('reduction_target');
+//			$save['reduction_target']		= 'price';
+//			$save['reduction_type']			= $this->input->post('reduction_type');
+//			$save['reduction_amount']		= $this->input->post('reduction_amount');
+//			$save['point_consume']			= $this->input->post('point_consume');
+//			$save['credit_consume']			= $this->input->post('credit_consume');
+//			$save['desc']					= $this->input->post('desc');
+//			$save['staff_id']				= $this->current_admin['id'];
+//			$save['created_date']			= date('Y-m-d H:i:s');
+//						
+//			//Checking for super admin
+//			if($this->current_admin['branch'] == 0):
+//				$save['branch_id']					= $this->input->post('branch_id');
+//			else:
+//				$save['branch_id']					= $this->current_admin['branch'];
+//			endif;			
+//			
+//
+//			if($save['start_date']=='')
+//			{
+//				$save['start_date'] = null;
+//			}
+//			if($save['end_date']=='')
+//			{
+//				$save['end_date'] = null;
+//			}
+//			
+//			$product = $this->input->post('product');
+//			
+//			if ($id)
+//			{	
+//				//delete the original file if another is uploaded
+//				if($uploaded)
+//				{
+//					if($data['image'] != '')
+//					{
+//						//$file = 'uploads/'.$data['image'];
+//						//$config['upload_path'] = FCPATH . 'uploads/';						 						
+//						
+//						$file = $folderName.$data['image'];												
+//							
+//						//delete the existing file if needed
+//						if(file_exists($file))
+//						{
+//							unlink($file);
+//						}
+//					}
+//				}
+//					
+//			}
+//			else
+//			{
+//				if(!$uploaded)
+//				{
+//					$data['error']	= $this->upload->display_errors();
+//					$this->view(config_item('admin_folder').'/project_upload_form', $data);
+//					return; //end script here if there is an error
+//				}
+//			}
+//			
+//			if($uploaded)
+//			{
+//				if (!is_dir($folderName)) {
+//					mkdir($folderName, 0777, TRUE);
+//					//mkdir('./uploads/project/' . $today_date.'/thumbs', 0777, TRUE);
+//				}
+//								
+//				$image			= $this->upload->data();
+//															
+//				$save['image']  = $folderName.$image['file_name'];
+//				//$save['image']	= $image['file_name'];
+//			}
+//			
+//			
+//			
+//			// save project
+//			$promo_id = $this->Project_model->save($save);
+//			
+//			// save products if not a whole order project
+//			//   clear products first, then save again (the lazy way, but sequence is not utilized at the moment)
+//			$this->Project_model->remove_product($id);
+//			
+//			if(!$save['whole_order_project'] && $product) 
+//			{
+//				while(list(, $product_id) = each($product))
+//				{
+//					$this->Project_model->add_product($promo_id, $product_id);
+//				}
+//			}
+//			
+//			// We're done
+//			$this->session->set_flashdata('message', lang('message_saved_project'));
+//			
+//			//go back to the product list
+//			redirect($this->config->item('admin_folder').'/projects');
 		}
 	}
 
@@ -305,32 +308,32 @@ class Projects extends Admin_Controller {
 //		}
 //	}
 //	
-//	function delete($id = false)
-//	{
-//		if ($id)
-//		{	
-//			$project	= $this->Project_model->get_project($id);
-//			//if the promo does not exist, redirect them to the customer list with an error
-//			if (!$project)
-//			{
-//				$this->session->set_flashdata('error', lang('error_not_found'));
-//				redirect($this->config->item('admin_folder').'/projects');
-//			}
-//			else
-//			{
-//				$this->Project_model->delete_project($id);
-//				
-//				$this->session->set_flashdata('message', lang('message_project_deleted'));
-//				redirect($this->config->item('admin_folder').'/projects');
-//			}
-//		}
-//		else
-//		{
-//			//if they do not provide an id send them to the promo list page with an error
-//			$this->session->set_flashdata('message', lang('error_not_found'));
-//			redirect($this->config->item('admin_folder').'/projects');
-//		}
-//	}
+	function delete($id = false)
+	{
+		if ($id)
+		{	
+			$project	= $this->Project_model->get_projects($id);
+			//if the promo does not exist, redirect them to the customer list with an error
+			if (!$project)
+			{
+				$this->session->set_flashdata('error', lang('error_not_found'));
+				redirect($this->config->item('admin_folder').'/projects/form');
+			}
+			else
+			{
+				$this->Project_model->delete_project($id);
+				
+				$this->session->set_flashdata('message', lang('message_project_deleted'));
+				redirect($this->config->item('admin_folder').'/projects/form');
+			}
+		}
+		else
+		{
+			//if they do not provide an id send them to the promo list page with an error
+			$this->session->set_flashdata('message', lang('error_not_found'));
+			redirect($this->config->item('admin_folder').'/projects/form');
+		}
+	}
 //	
 //	function process_project()
 //	{
@@ -518,7 +521,7 @@ class Projects extends Admin_Controller {
 
             $this->load->helper(array('form', 'date', 'url'));
 
-            $folderName = 'uploads/project/'.$today_date.'/';
+            $folderName = 'uploads/project/';
             $config['upload_path']		= $folderName;		
             if (!is_dir($folderName)) {
                     mkdir($folderName, 0777, TRUE);
@@ -555,9 +558,21 @@ class Projects extends Admin_Controller {
                 }
             }else{
                 if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile)){
-                    
+                    $project_url_exist = $this->Project_model->get_project_by_url($targetFile);
+                    if(!$project_url_exist){
+                        $this->load->model('Project_model');
+                        $data = array( 
+                            'url'           => $targetFile, 
+                            'name'          => $fileName,
+                            'upload_date'   => date("Y-m-d H:i:s"),
+                            'status'        => 'INACTIVE'
+                         ); 
+                         var_dump($data);
+                        $img_id = $this->Project_model->save($data); 
+                    }
                 }
             }
+            $this->session->set_flashdata('message', lang('message_project_uploaded'));
         }
         
         public function getData()

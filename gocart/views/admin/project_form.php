@@ -34,7 +34,8 @@
                                                 <th><?php echo lang('name'); ?></th>
                                                 <th><?php echo lang('image'); ?></th>
                                                 <th><?php echo lang('category'); ?></th>
-                                                <th><?php echo lang('description'); ?></th>	
+                                                <th><?php echo lang('description'); ?></th>
+                                                <th><?php echo lang('status'); ?></th>	
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -44,10 +45,17 @@
                                                 <tr>
                                                     <td><?php echo $voucher->name; ?></td>
                                                     <td><?php if ($voucher->url != ''): ?>
-                                                            <div style="text-align:center; padding:5px; border:1px solid #ccc;"><img src="<?php echo base_url($voucher->url); ?>" width="30px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
+                                                            <div style="text-align:center; padding:2px; border:1px solid #ccc;"><img src="<?php echo base_url($voucher->url); ?>" height="80px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
                                                         <?php endif; ?>	</td>
                                                     <td><?php echo $voucher->category; ?></td>
                                                     <td><?php echo $voucher->description; ?></td>
+                                                    <td><?php echo $voucher->status; ?></td>
+                                                    <td>
+                                                            <div class="btn-group" style="float:right;">
+<!--                                                                    <a class="btn btn-white btn-bitbucket" href="<?php echo site_url($this->config->item('admin_folder').'/vouchers/editform/'.$voucher->id); ?>"><i class="icon-pencil"></i> <?php echo lang('edit');?></a>-->
+                                                                    <a class="btn btn-danger" href="<?php echo site_url($this->config->item('admin_folder').'/projects/delete/'.$voucher->id); ?>" onclick="return areyousure();"><i class="icon-trash icon-white"></i> <?php echo lang('delete');?></a>
+                                                            </div>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -76,7 +84,7 @@
         acceptedFiles: "image/*",
         init: function () {
             this.on("complete", function (file) {
-                window.location.replace("<?php echo base_url() ?>admin/projects/form");
+                window.location.replace("<?php echo base_url() ?>admin/projects/form/true");
                 //this.removeFile(file);
 //                $("#table-data").load("<?php echo base_url() ?>admin/projects/getData");
             });

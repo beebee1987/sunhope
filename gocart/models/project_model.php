@@ -106,21 +106,18 @@ class Project_model extends CI_Model
 	// get projects list, sorted by start_date (default), end_date
 	function get_projects($sort=NULL, $current_admin=NULL, $is_form = false) 
 	{
-		// if($is_form){
-		// 	$this->db->where('projects.active', 1);		
-		// }
-		
-		//$this->db->select(" branch.name as branch_name ,projects.* ");
-		// for merchant || branch can view only own data
-		
-		
 		return $this->db->get('projects_products')->result();
 	}
 	
 	// get project details, by id
 	function get_project($id)
 	{
-		return $this->db->where('id', $id)->get('projects')->row();
+		return $this->db->where('id', $id)->get('projects_products')->row();
+	}
+        
+        function get_project_by_url($url)
+	{
+		return $this->db->where('url', $url)->get('projects_products')->row();
 	}
 	
 	// get project details, by code
@@ -197,11 +194,11 @@ class Project_model extends CI_Model
 	// remove product from project. Product id as null for removing all products
 	function remove_product($project_id, $prod_id=NULL)
 	{
-		$where = array('project_id'=>$project_id);
+		$where = array('id'=>$project_id);
 		
 		if(!is_null($prod_id))
 		{
-			$where['product_id'] = $prod_id;
+			$where['id'] = $prod_id;
 		}
 			
 		$this->db->where($where);
