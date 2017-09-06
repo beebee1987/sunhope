@@ -18,3 +18,14 @@ CREATE TABLE `clients` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `projects_products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `upload_date` date DEFAULT NULL,
+  `Status` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
