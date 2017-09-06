@@ -62,7 +62,7 @@
                     </button>
 
                     <a class="navbar-brand" href="#intro">
-                        <span>Sun Hope Engineering</span>
+                        <span>Sun Hope Industry Sdn Bhd</span> <span style="font-size: 12px;">(Sun Hope Engineering)</span>
                         <!-- <img src="assets/img/logo1.png" alt="Logo"> -->
                     </a>
                 </div>
@@ -161,7 +161,7 @@
             <div class="about-image bg-grey">
                 <div class="container">
                     <div class="title-v1">
-                        <h1>We are Sun Hope Engineering</h1>
+                        <h1>About us</h1>
                         <p>Beginning with the inception of Sun Hope Engineering in 1996 and later the establishment
                             Sun Hope Industry Sdn Bhd in 2002. Sun Hope has evolved from fledgling company that
                             relied mostly on referral business to a competent and established corporation that
@@ -178,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="container content-lg">
+<!--            <div class="container content-lg">
                 <div class="title-v1">
                     <h2>Our Vision And Mission</h2>
                     <p>We <strong>meet</strong> and get to know you. You tell us and we listen. <br>
@@ -214,7 +214,7 @@
                         <img class="img-responsive" src="<?php echo base_url('uploads/about/vision.jpg') ?>" alt="">
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!--div class="parallax-quote parallaxBg">
                 <div class="container">
@@ -323,8 +323,8 @@
             <div class="container content-lg">
                 <div class="title-v1">
                     <h2>Our Services</h2>
-                    <p>We do <strong>things</strong> differently company providing services. <br>
-                        Focused on helping our clients to build a <strong>successful</strong> Machine</p>
+<!--                    <p>We do <strong>things</strong> differently company providing services. <br>
+                        Focused on helping our clients to build a <strong>successful</strong> Machine</p>-->
                 </div>
 
                 <div class="row service-box-v1">
@@ -478,7 +478,7 @@
             <div class="container content-lg">
                 <div class="title-v1">
                     <h2>Latest Projects</h2>
-                    <p>We do <strong>things</strong> differently company providing.</p>
+<!--                    <p>We do <strong>things</strong> differently company providing.</p>-->
                 </div>
 
 
@@ -761,8 +761,8 @@
             <div class="container content-lg">
                 <div class="title-v1">
                     <h2>Contact Us</h2>
-                    <p>Lorem Ipsum industry. <br>
-                        It has been the Lorem Ipsum industry.</p>
+<!--                    <p>Lorem Ipsum industry. <br>
+                        It has been the Lorem Ipsum industry.</p>-->
                 </div>
 
 
