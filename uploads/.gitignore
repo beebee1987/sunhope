@@ -1,0 +1,7 @@
+/nbproject/private/
+/nbproject/
+
+*.DS_Store
+
+#Subversion files
+.svn

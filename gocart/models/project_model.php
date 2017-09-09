@@ -117,6 +117,19 @@ class Project_model extends CI_Model
 		return $this->db->get('projects_products')->result();
 	}
 	
+	function get_projects_category($sort=NULL, $current_admin=NULL, $is_form = false) 
+	{
+		// if($is_form){
+		// 	$this->db->where('projects.active', 1);		
+		// }
+		
+		//$this->db->select(" branch.name as branch_name ,projects.* ");
+		// for merchant || branch can view only own data
+		
+		$this->db->group_by('projects_products.category');
+		return $this->db->get('projects_products')->result();
+	}
+
 	// get project details, by id
 	function get_project($id)
 	{

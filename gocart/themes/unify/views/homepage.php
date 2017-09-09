@@ -49,7 +49,7 @@
     The #page-top ID is part of the scrolling feature.
     The data-spy and data-target are part of the built-in Bootstrap scrollspy function.
     -->
-    <body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery dark">
+    <body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-project dark">
         <!--=== Header ===-->
         <nav class="one-page-header navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -109,10 +109,10 @@
                         <!-- SLIDE 1 -->
                         <li data-transition="curtain-1" data-title="Slide 1">
                             <!-- MAIN IMAGE -->
-                            <img src="<?php echo base_url('uploads/slider/engineer.jpg'); ?>" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                            <img src="<?php echo base_url('uploads/slider/slider3.jpg'); ?>" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                             <!-- LAYERS -->
-                            <div class="tp-caption rs-caption-1 sft start"
+                            <!-- <div class="tp-caption rs-caption-1 sft start"
                                  data-x="center"
                                  data-hoffset="0"
                                  data-y="100"
@@ -121,28 +121,20 @@
                                  data-easing="Back.easeInOut"
                                  data-endspeed="300">
                                 WE ARE SUN HOPE ENGINEERING COMPANY
-                            </div>
+                            </div> -->
 
 
                         </li>
-                        <li data-transition="curtain-1" data-title="Slide 1">
+                        <li data-transition="curtain-2" data-title="Slide 2">
                             <!-- MAIN IMAGE -->
-                            <img src="<?php echo base_url('uploads/slider/sunhope_company.jpg'); ?>" alt="slidebg1" data-bgfit="cover" data-bgposition="center right" data-bgrepeat="no-repeat">
-
-                            <!-- LAYERS -->
-                            <div class="tp-caption rs-caption-1 sft start"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-y="100"
-                                 data-speed="800"
-                                 data-start="2000"
-                                 data-easing="Back.easeInOut"
-                                 data-endspeed="300">
-                                WE ARE SUN HOPE ENGINEERING COMPANY
-                            </div>
-
-
+                            <img src="<?php echo base_url('uploads/slider/slider6.jpg'); ?>" alt="slidebg2" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
                         </li>
+
+                        <li data-transition="curtain-3" data-title="Slide 3">
+                            <!-- MAIN IMAGE -->
+                            <img src="<?php echo base_url('uploads/slider/DSC03087.JPG'); ?>" alt="slidebg3" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        </li>
+
 
 
 
@@ -172,9 +164,9 @@
                             We look forward to the opportunity to provide solutions to meet your engineering needs!!
                         </p>
                     </div>
-                    <div class="img-center">
+                    <!-- <div class="img-center">
                         <img class="img-responsive" src="<?php echo base_url('uploads/about/about_us.jpg') ?>" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -328,23 +320,55 @@
                 </div>
 
                 <div class="row service-box-v1">
-                    <div class="col-md-4 col-sm-6">                    
-                    </div>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-3 col-sm-6">                    
                         <div class="service-block service-block-default">
                             <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
-                            <h2 class="heading-sm">Specialist in</h2>
+                            <h2 class="heading-sm">Our Fabrication</h2>
                             <ul class="list-unstyled">
-                                <li>Machine &amp; Installation</li>
-                                <li>Piping</li>
+                                <li>Cutting</li>
+                                <li>Rolling</li>
                                 <li>Welding</li>
-                                <li>Machinery Works & etc</li>
-                                <li>Hydraulic System</li>
-                                <li>Gas piping System</li>
+                                <li>Machining</li>
+                                <li>Milling</li>
+                                <li>Sand Blasting</li>
+                                <li>Painting</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">                    
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-block service-block-default">
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <h2 class="heading-sm">Welding Service</h2>
+                            <ul class="list-unstyled">
+                                <li>MIG Welding</li>
+                                <li>Arc Welding</li>
+                                <li>TIG Welding</li>
+                                <li>Plasma Cutting </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">    
+                        <div class="service-block service-block-default">
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <h2 class="heading-sm">Site Service</h2>
+                            <ul class="list-unstyled">
+                                <li>Machinery Installation</li>
+                                <li>Air Duct works</li>
+                                <li>Piping works</li>
+                            </ul>
+                        </div>                
+                    </div>
+                    <div class="col-md-3 col-sm-6">    
+                        <div class="service-block service-block-default">
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <h2 class="heading-sm">Other Service</h2>
+                            <ul class="list-unstyled">
+                                <li>Consultancy</li>
+                                <li>Maintenance and Service</li>
+                                <li>Design</li>
+                            </ul>
+                        </div>                
                     </div>
                 </div>
             </div>
@@ -458,7 +482,7 @@
                                     <span>3 min ago via <a href="https://twitter.com/htmlstream">@htmlstream</a></span>
                                 </li>
                                 <li class="item">
-                                    <p><a href="#">@htmlstream</a> jQuery lightGallery - Lightweight jQuery lightbox gallery for displaying image and video gallery <a href="#">http://sachinchoolur.github.io/lightGallery</a> <a href="#">#javascript</a></p>
+                                    <p><a href="#">@htmlstream</a> jQuery lightGallery - Lightweight jQuery lightbox project for displaying image and video project <a href="#">http://sachinchoolur.github.io/lightGallery</a> <a href="#">#javascript</a></p>
                                     <span>10 min ago Retweeted by <a href="https://twitter.com/htmlstream">@twbootstrap</a></span>
                                 </li>
                                 <li class="item">
@@ -477,7 +501,7 @@
         <section id="projects" class="about-section">
             <div class="container content-lg">
                 <div class="title-v1">
-                    <h2>Latest Projects</h2>
+                    <h2>Projects</h2>
 <!--                    <p>We do <strong>things</strong> differently company providing.</p>-->
                 </div>
 
@@ -485,220 +509,45 @@
                 <div class="cube-portfolio">
                     <div id="filters-container" class="cbp-l-filters-button">
                         <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div>
-                        <div data-filter=".akinbina" class="cbp-filter-item"> Akinbina </div>
-                        <div data-filter=".bluescope" class="cbp-filter-item"> Bluescope </div>                    
+
+
+                        <?php 
+                            foreach ($categories as $category):                             
+                        ?>
+                        <div data-filter=".<?php echo $category->category ?>" class="cbp-filter-item"> <?php echo $category->category ?> </div>
+                        <?php endforeach; 
+                        ?>  
+
+
+
                     </div><!--/end Filters Container-->
 
-                    <div id="grid-container" class="cbp-l-grid-gallery">
-                        <div class="cbp-item akinbina motion">
-                            <a href="1" class="cbp-caption cbp-singlePageInline"
-                               data-title="Akinbina<br>by Paul Flavius Nechita"-->
+
+
+                    <div id="grid-container" class="cbp-l-grid-project">
+
+                         <?php 
+                            foreach ($projects as $project):                             
+                        ?>
+                        <div class="cbp-item <?php echo $project->category ?> print">
+                            <a class="cbp-captionclients" data-title="FBK<br>by Jack Lee">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Akinbina.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Akinbina</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
+                                    <img src="<?php echo base_url($project->url.'?dummy='.rand()) ?>" alt="">
                                 </div>
                             </a>
                         </div>
-                        <div class="cbp-item web-design">
-                            <a href="2" class="cbp-caption cbp-singlePageInline"
-                               data-title="Ann Joo Steel (Prai)<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Ann Joo Steel (Prai).JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Ann Joo Steel (Prai)</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item bluescope motion">
-                            <a href="3" class="cbp-caption cbp-singlePageInline"
-                               data-title="Bluescope<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Bluescope.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Bluescope</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item web-design print">
-                            <a href="4" class="cbp-caption cbp-singlePageInline"
-                               data-title="FBK<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/FBK.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">FBK</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item motion">
-                            <a href="5" class="cbp-caption cbp-singlePageInline"
-                               data-title="GoForth<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/GoForth.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">GoForth</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item print motion">
-                            <a href="6" class="cbp-caption cbp-singlePageInline"
-                               data-title="Lion Tooling<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Lion Tooling.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Lion Tooling</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item web-design print">
-                            <a href="7" class="cbp-caption cbp-singlePageInline"
-                               data-title="Reme Eng<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Reme Eng.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Reme Eng</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item print">
-                            <a href="8" class="cbp-caption cbp-singlePageInline"
-                               data-title="SCA<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/SCA.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">SCA</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item motion">
-                            <a href="9" class="cbp-caption cbp-singlePageInline"
-                               data-title="See Hau<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/See Hau.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">See Hau</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item motion">
-                            <a href="10" class="cbp-caption cbp-singlePageInline"
-                               data-title="Southern Steel<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Southern Steel.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Southern Steel</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item motion">
-                            <a href="11" class="cbp-caption cbp-singlePageInline"
-                               data-title="Top Slings<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Top Slings.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Top Slings</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you2</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cbp-item motion">
-                            <a href="12" class="cbp-caption cbp-singlePageInline"
-                               data-title="Tractor - Line<br>by Jack Lee">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url('uploads/gallery/Tractor - Line.JPG') ?>" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignLeft">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">Tractor - Line</div>
-                                            <div class="cbp-l-caption-desc">by Jack Lee</div>
-                                            <div class="cbp-l-caption-long-desc" style="display: none">Someone like you</div>                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        <?php endforeach; 
+                        ?>                                
+
+
+                      
+
+                        
                     </div>
 
-                    <div class="cbp-l-loadMore-button">
+                    <!-- <div class="cbp-l-loadMore-button">
                         <a href="<?php echo theme_url('assets/ajax/loadMore.html') ?>" class="cbp-l-loadMore-button-link">LOAD MORE</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -774,6 +623,7 @@
                             <li><i class="fa fa-phone"></i> 03-5162 5534</li>
                             <li><i class="fa fa-fax"></i> 03-5167 1797</li>
                             <li><i class="fa fa-home"></i> Working hours: 8am - 5pm (Monday - Saturday) </li>
+                            <li><i class="fa fa-envelope"></i> <a href="sunhope9028@gmail.com">sunhope9028@gmail.com</a></li>
                             <li><i class="fa fa-envelope"></i> <a href="waichoon_lee@hotmail.com">waichoon_lee@hotmail.com</a></li>
                             <li><i class="fa fa-globe"></i> <a href="www.sunhope.my">www.sunhope.my</a></li>
                         </ul>
@@ -926,7 +776,7 @@
 
                         that.updateSinglePageInline(contentSinglePage);
 
-                        //that.updateSinglePageInline('<div class="cbp-l-inline"><div class="cbp-l-inline-left"><img src="uploads/gallery/Akinbina.JPG" alt="Dashboard" class="cbp-l-project-img"></div><div class="cbp-l-inline-right"><div class="cbp-l-inline-title">Akinbina</div><div class="cbp-l-inline-subtitle">by Jack Lee</div><div class="cbp-l-inline-desc">Akinbina is a Akinbina</div></div></div>');
+                        //that.updateSinglePageInline('<div class="cbp-l-inline"><div class="cbp-l-inline-left"><img src="uploads/project/Akinbina.JPG" alt="Dashboard" class="cbp-l-project-img"></div><div class="cbp-l-inline-right"><div class="cbp-l-inline-title">Akinbina</div><div class="cbp-l-inline-subtitle">by Jack Lee</div><div class="cbp-l-inline-desc">Akinbina is a Akinbina</div></div></div>');
 
                     }, singlePageInlinePosition: 'below'
 
