@@ -20,7 +20,7 @@ class Clients extends Admin_Controller {
 	{
 		$data['page_title']	= lang('clients');
 		$data['clients']	= $this->Client_model->get_clients(NULL, $this->current_admin);
-		
+                
 		$this->view($this->config->item('admin_folder').'/clients', $data);
 	}
 	
@@ -44,18 +44,16 @@ class Clients extends Admin_Controller {
 	
 	function form($id = false)
 	{
-		
-		//die(print_r($_POST));
 		$today_date 	= date("Ymd");
 				
 		$this->load->helper(array('form', 'date', 'url'));
 		$folderName = 'uploads/client/'.$today_date.'/';
 		$config['upload_path']		= $folderName;
 				
-		if (!is_dir($folderName)) {
-			mkdir($folderName, 0777, TRUE);
-			//mkdir('./uploads/client/' . $today_date.'/thumbs', 0777, TRUE);
-		}
+//		if (!is_dir($folderName)) {
+//			mkdir($folderName, 0777, TRUE);
+//			mkdir('./uploads/client/' . $today_date.'/thumbs', 0777, TRUE);
+//		}
 		
 		
 		$config['allowed_types']	= 'gif|jpg|png';
@@ -66,14 +64,6 @@ class Clients extends Admin_Controller {
 		
 		$this->load->library('form_validation');
 		
-		$branches = $this->Branch_model->get_branch_list($this->current_admin, TRUE);
-		$branch_list = array();
-		foreach($branches as $branch)
-		{
-			$branch_list[$branch['id']] = $branch['name'];
-		}
-		$data['branches'] = $branch_list;
-		
 		
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 		
@@ -82,20 +72,16 @@ class Clients extends Admin_Controller {
 		$data['page_title']		= lang('client_form');
 		
 		//default values are empty if the product is new
-		$data['id']						= '';
-		$data['code']					= '';
+		$data['id']					= '';
 		$data['name']					= '';
-		$data['start_date']				= '';
+                $data['email']					= '';
+                $data['phone']					= '';
+                $data['company']				= '';
+                $data['default_billing_address']		= '';
+                $data['image']					= '';
+		
 		$data['whole_order_client']		= 1;
-		$data['max_product_instances'] 	= '';
-		$data['end_date']				= '';
-		$data['max_uses']				= '';
-		$data['reduction_target'] 		= 'price';
-		$data['reduction_type']			= '';
-		$data['reduction_amount']		= '';
-		$data['point_consume']			= '';
-		$data['image']					= '';
-		$data['desc']					= '';
+		
 		$data['branch_id']				= '';
 		
 		$added = array();
@@ -103,90 +89,37 @@ class Clients extends Admin_Controller {
 		if ($id)
 		{	
 			$client		= $this->Client_model->get_client($id);
+                        
 
 			//if the product does not exist, redirect them to the product list with an error
 			if (!$client)
 			{
 				$this->session->set_flashdata('message', lang('error_not_found'));
-				redirect($this->config->item('admin_folder').'/product');
+				redirect($this->config->item('admin_folder').'/clients');
 			}
 			
 			//set values to db values
 			$data['id']						= $client->id;
-			$data['code']					= $client->code;
 			$data['name']					= $client->name;
-			$data['start_date']				= $client->start_date;
-			$data['end_date']				= $client->end_date;
-			//$data['whole_order_client']		= $client->whole_order_client;
+                        $data['email']					= $client->email;
+                        $data['phone']					= $client->phone;
+                        $data['company']					= $client->company;
+                        $data['image']					= $client->logo;
+                        $data['default_billing_address']		= $client->default_billing_address;
+                        $data['active']		= $client->active;
+                        
 			$data['whole_order_client']	= 1;
-			$data['max_product_instances'] 	= $client->max_product_instances;
-			$data['num_uses']     			= $client->num_uses;
-			$data['max_uses']				= $client->max_uses;
 			//$data['reduction_target']		= $client->reduction_target;
-			$data['reduction_target']		= 'price';
-			$data['reduction_type']			= $client->reduction_type;
-			$data['reduction_amount']		= $client->reduction_amount;
-			$data['point_consume']			= $client->point_consume;
-			$data['image']					= $client->image;
-			$data['desc']					= $client->desc;
-			$data['branch_id']				= $client->branch_id;
-			
-			$added = $this->Client_model->get_product_ids($id);
 		}
 		
-		//Checking for super admin
-		if($this->current_admin['branch'] == 0):
-			$this->form_validation->set_rules('branch_id', 'lang:branch', 'trim|required');
-		endif;
-		
-		$this->form_validation->set_rules('code', 'lang:code', 'trim|required|callback_check_code');
+		//Checking for super admin		
 		$this->form_validation->set_rules('name', 'lang:name', 'trim|required');
-		$this->form_validation->set_rules('max_uses', 'lang:max_uses', 'trim|numeric');
-		$this->form_validation->set_rules('max_product_instances', 'lang:limit_per_order', 'trim|numeric');
-		$this->form_validation->set_rules('whole_order_client', 'lang:whole_order_discount');
-		//$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim|required');
-		$this->form_validation->set_rules('reduction_target', 'lang:reduction_target', 'trim');
-		$this->form_validation->set_rules('reduction_type', 'lang:reduction_type', 'trim');
-		$this->form_validation->set_rules('reduction_amount', 'lang:reduction_amount', 'trim|numeric');
 		
-		$this->form_validation->set_rules('point_consume', 'lang:point_consume', 'trim|numeric');
-		$this->form_validation->set_rules('image', 'lang:image', 'trim');
-		$this->form_validation->set_rules('desc', 'lang:desc', 'trim');
-		
-		$this->form_validation->set_rules('start_date', 'lang:start_date');
-		$this->form_validation->set_rules('end_date', 'lang:end_date');
-		
-		// create product list
-		$products = $this->Product_model->get_products();
-		
-		// set up a 2x2 row list for now
-		$data['product_rows'] = "";
-		$x=0;
-		while(TRUE) { // Yes, forever, until we find the end of our list
-			if ( !isset($products[$x] )) break; // stop if we get to the end of our list
-			$checked = "";
-			if(in_array($products[$x]->id, $added))
-			{
-				$checked = "checked='checked'";
-			}
-			$data['product_rows']  .=  "<tr><td><input type='checkbox' name='product[]' value='". $products[$x]->id ."' $checked></td><td> ". $products[$x]->name ."</td>";
-			
-			$x++;
-			
-			//reset the checked value to nothing
-			$checked = "";
-			if ( isset($products[$x] )) { // if we've gotten to the end on this row
-				if(in_array($products[$x]->id, $added))
-				{
-					$checked = "checked='checked'";
-				}
-				$data['product_rows']  .= 	"<td><input type='checkbox' name='product[]' value='". $products[$x]->id ."' $checked><td><td> ". $products[$x]->name ."</td></tr>";
-			} else {
-				$data['product_rows']  .= 	"<td> </td></tr>";
-			}
-			
-			$x++;
-		} 
+		$this->form_validation->set_rules('email', 'lang:email', 'trim');
+		$this->form_validation->set_rules('phone', 'lang:phone', 'trim');
+                $this->form_validation->set_rules('company', 'lang:company', 'trim');
+                $this->form_validation->set_rules('image', 'lang:logo', 'trim');
+                $this->form_validation->set_rules('default_billing_address', 'lang:default_billing_address', 'trim');
 		
 	
 		if ($this->form_validation->run() == FALSE)
@@ -196,46 +129,30 @@ class Clients extends Admin_Controller {
 		else
 		{
 			$this->load->helper('text');
-			$uploaded	= $this->upload->do_upload('image');						
+			$uploaded	= $this->upload->do_upload('image');	
+                        
+                        //die();
+                        //var_dump($uploaded);
+                        
+                        
 			
 			$save['id']						= $id;
-			$save['code']					= $this->input->post('code');
 			$save['name']					= $this->input->post('name');
-			$save['start_date']				= $this->input->post('start_date');
-			//$save['end_date']				= $this->input->post('end_date');
-			//$save['max_uses']				= $this->input->post('max_uses');
-			$save['start_date']				= format_ymd_malaysia($this->input->post('start_date'));
-			$save['end_date']				= format_ymd_malaysia($this->input->post('end_date'));
-			//$save['whole_order_client'] 	= $this->input->post('whole_order_client');
-			$save['whole_order_client'] 	= 1;
-			$save['max_product_instances'] 	= $this->input->post('max_product_instances');
-			//$save['reduction_target']		= $this->input->post('reduction_target');
-			$save['reduction_target']		= 'price';
-			$save['reduction_type']			= $this->input->post('reduction_type');
-			$save['reduction_amount']		= $this->input->post('reduction_amount');
-			$save['point_consume']			= $this->input->post('point_consume');
-			$save['desc']					= $this->input->post('desc');
-			$save['staff_id']				= $this->current_admin['id'];
-			$save['created_date']			= date('Y-m-d H:i:s');
-						
-			//Checking for super admin
-			if($this->current_admin['branch'] == 0):
-				$save['branch_id']					= $this->input->post('branch_id');
-			else:
-				$save['branch_id']					= $this->current_admin['branch'];
-			endif;
-
-			if($save['start_date']=='')
-			{
-				$save['start_date'] = null;
-			}
-			if($save['end_date']=='')
-			{
-				$save['end_date'] = null;
-			}
+			$save['email']				= $this->input->post('email');
+                        $save['phone']				= $this->input->post('phone');
+                        $save['company']				= $this->input->post('company');
+                        $save['default_billing_address']				= $this->input->post('default_billing_address');
+                        
+                        if($id){
+                            $save['active']				= $this->input->post('active');
+                        }
+                        
+                        $save['logo']				= $data['image'];
 			
-			$product = $this->input->post('product');
 			
+                        
+                        
+                        
 			if ($id)
 			{
 				//delete the original file if another is uploaded
@@ -247,6 +164,8 @@ class Clients extends Admin_Controller {
 						//$config['upload_path'] = FCPATH . 'uploads/';
 			
 						$file = $folderName.$data['image'];
+                                                
+		
 							
 						//delete the existing file if needed
 						if(file_exists($file))
@@ -266,34 +185,42 @@ class Clients extends Admin_Controller {
 					return; //end script here if there is an error
 				}
 			}
-				
-			if($uploaded)
+			
+                        if($uploaded)
 			{
-				if (!is_dir($folderName)) {
+                                if (!is_dir($folderName)) {
 					mkdir($folderName, 0777, TRUE);
-					//mkdir('./uploads/client/' . $today_date.'/thumbs', 0777, TRUE);
+					mkdir('./uploads/client/' . $today_date.'/thumbs', 0777, TRUE);
 				}
 			
 				$image			= $this->upload->data();
-					
-				$save['image']  = $folderName.$image['file_name'];
-				//$save['image']	= $image['file_name'];
+                                
+                                //die();
+                                //var_dump($image);
+                                
+                                
+                                
+                                $config = array();
+                                $config['image_library'] = 'gd2';
+                                $config['source_image'] = $image['full_path'];
+                                $config['create_thumb'] = TRUE;
+                                $config['new_image'] = $image['file_path'] . 'thumbs/';
+                                $config['maintain_ratio'] = TRUE;
+                                $config['thumb_marker'] = '';
+                                $config['width'] = 222;
+                                $config['height'] = 120;
+                                $this->load->library('image_lib', $config);
+                                $this->image_lib->resize();
+                                
+				$save['logo']  = $folderName. 'thumbs/' .$image['file_name'];                                
 			}
-			
-			// save client
-			$promo_id = $this->Client_model->save($save);
-			
-			// save products if not a whole order client
-			//   clear products first, then save again (the lazy way, but sequence is not utilized at the moment)
-			$this->Client_model->remove_product($id);
-			
-			if(!$save['whole_order_client'] && $product) 
-			{
-				while(list(, $product_id) = each($product))
-				{
-					$this->Client_model->add_product($promo_id, $product_id);
-				}
-			}
+                        
+                        if($id){
+                            $this->Client_model->update_client($id, $save);
+                        }else{
+                            $this->Client_model->add_client($save);
+                        }
+                        
 			
 			// We're done
 			$this->session->set_flashdata('message', lang('message_saved_client'));

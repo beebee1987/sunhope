@@ -7,7 +7,7 @@ class Cart extends Front_Controller {
     function __construct() {
         parent::__construct();
 
-        $this->load->model(array('point_model', 'credit_model', 'admin_model', 'Slider_model', 'Company_model', 'latest_news_model', 'Settings_model', 'Voucher_model', 'Coupon_model', 'Project_model'));
+        $this->load->model(array('point_model', 'credit_model', 'admin_model', 'Slider_model', 'Company_model', 'latest_news_model', 'Settings_model', 'Voucher_model', 'Coupon_model', 'Project_model', 'Client_model'));
 
         $this->customer = $this->go_cart->customer();
     }
@@ -151,6 +151,7 @@ class Cart extends Front_Controller {
         $data['sliders'] = $this->Slider_model->display_one_slider();
         $data['projects'] = $this->Project_model->get_projects();
         $data['categories'] = $this->Project_model->get_projects_category();
+        $data['clients'] = $this->Client_model->get_active_clients();
         //$data['companies'] 			= $this->Company_model->get_company_list();
         // show sliders
         // show clients

@@ -1,0 +1,56 @@
+-- MySQL dump 10.16  Distrib 10.1.10-MariaDB, for osx10.6 (i386)
+--
+-- Host: localhost    Database: sunhope
+-- ------------------------------------------------------
+-- Server version	10.1.10-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `projects_products`
+--
+
+DROP TABLE IF EXISTS `projects_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projects_products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `upload_date` date DEFAULT NULL,
+  `Status` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projects_products`
+--
+
+LOCK TABLES `projects_products` WRITE;
+/*!40000 ALTER TABLE `projects_products` DISABLE KEYS */;
+INSERT INTO `projects_products` VALUES (5,'uploads/project/20170906/DSC01721.JPG','DSC01721.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(6,'uploads/project/20170906/DSC01686.JPG','DSC01686.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(7,'uploads/project/20170906/DSC01745.JPG','DSC01745.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(8,'uploads/project/20170906/DSC01746.JPG','DSC01746.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(9,'uploads/project/20170906/DSC01747 copy.JPG','DSC01747 copy.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(10,'uploads/project/20170906/DSC01747.JPG','DSC01747.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(11,'uploads/project/20170906/DSC01780.JPG','DSC01780.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(12,'uploads/project/20170906/DSC01828.JPG','DSC01828.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(13,'uploads/project/20170906/DSC01827.JPG','DSC01827.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(14,'uploads/project/20170906/DSC01836.JPG','DSC01836.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(15,'uploads/project/20170906/DSC01839.JPG','DSC01839.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(16,'uploads/project/20170906/DSC01848.JPG','DSC01848.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(17,'uploads/project/20170906/DSC01847.JPG','DSC01847.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(18,'uploads/project/20170906/DSC01853.JPG','DSC01853.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(19,'uploads/project/20170906/DSC01857.JPG','DSC01857.JPG','Furnace',NULL,'2017-09-06','ACTIVE'),(20,'uploads/project/20170909/DSC01093.JPG','DSC01093.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(21,'uploads/project/20170909/DSC01091.JPG','DSC01091.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(22,'uploads/project/20170909/DSC01195.JPG','DSC01195.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(23,'uploads/project/20170909/DSC01107.JPG','DSC01107.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(24,'uploads/project/20170909/DSC01347.JPG','DSC01347.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(25,'uploads/project/20170909/DSC01338.JPG','DSC01338.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(26,'uploads/project/20170909/DSC01351.JPG','DSC01351.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(27,'uploads/project/20170909/DSC01537.JPG','DSC01537.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(28,'uploads/project/20170909/DSC01538.JPG','DSC01538.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(29,'uploads/project/20170909/DSC01662.JPG','DSC01662.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(30,'uploads/project/20170909/DSC01540.JPG','DSC01540.JPG','Rollers',NULL,'2017-09-09','INACTIVE'),(31,'uploads/project/20170909/DSC03033.JPG','DSC03033.JPG','Structural Works',NULL,'2017-09-09','INACTIVE'),(32,'uploads/project/20170909/DSC03038.JPG','DSC03038.JPG','Structural Works',NULL,'2017-09-09','INACTIVE'),(33,'uploads/project/20170909/DSC03087.JPG','DSC03087.JPG','Structural Works',NULL,'2017-09-09','INACTIVE'),(34,'uploads/project/20170909/DSC03089.JPG','DSC03089.JPG','Structural Works',NULL,'2017-09-09','INACTIVE');
+/*!40000 ALTER TABLE `projects_products` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-09-09 12:16:07

@@ -106,6 +106,12 @@ class Client_model extends CI_Model
 	// get clients list, sorted by start_date (default), end_date
 	function get_clients() 
 	{		
+		//$this->db->where('clients.active', 1);
+		return $this->db->get('clients')->result();
+	}
+        
+        function get_active_clients() 
+	{		
 		$this->db->where('clients.active', 1);
 		return $this->db->get('clients')->result();
 	}

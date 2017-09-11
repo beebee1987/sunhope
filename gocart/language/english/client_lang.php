@@ -29,6 +29,9 @@ $lang['message_customer_client']= 'The client and customer details has been foun
 $lang['message_saved_client']	= 'The client has been saved!';
 $lang['home']					= 'Home';
 $lang['branch']					= 'Branch';
+$lang['active']					= 'Active';
+$lang['inactive']                               = 'Inactive';
+
 
 
 $lang['error_saved_client']		= 'The client saving has been go wrong!';

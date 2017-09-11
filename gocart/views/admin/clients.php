@@ -28,9 +28,9 @@ function areyousure()
 <?php foreach ($clients as $client):?>
 		<tr>
 			<td><img src="<?php echo base_url($client->logo);?>" width="50%" alt="current"/></td>
-			<td><?php echo  $client->company; ?></td>
-			<td><?php echo  $client->email; ?></td>
-			<td><?php echo  $client->phone; ?></td>
+			<td><?php echo  $client->company ? $client->company : '-'; ?></td>
+			<td><?php echo  $client->email ? $client->email : '-'; ?></td>
+			<td><?php echo  $client->phone ? $client->phone : '-'; ?></td>
 			<td>
 				<div class="btn-group" style="float:right;">
 					<a class="btn btn-white btn-bitbucket" href="<?php echo site_url($this->config->item('admin_folder').'/clients/form/'.$client->id); ?>"><i class="icon-pencil"></i> <?php echo lang('edit');?></a>

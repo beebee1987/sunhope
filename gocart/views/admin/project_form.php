@@ -75,11 +75,11 @@
         url: "<?php echo base_url() ?>admin/projects/uploadImage",
         acceptedFiles: "image/*",
         init: function () {
-            this.on("complete", function (file) {
-                window.location.replace("<?php echo base_url() ?>admin/projects/form");
-                //this.removeFile(file);
-//                $("#table-data").load("<?php echo base_url() ?>admin/projects/getData");
-            });
+//            this.on("complete", function (file) {
+//                window.location.replace("<?php echo base_url() ?>admin/projects/form");
+                this.removeFile(file);
+                $("#table-data").load("<?php echo base_url() ?>admin/projects/getData");
+//            });
 //            this.on("complete", function (file) {
 //                if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
 //                redirect($this->config->item('admin_folder').'projects/form');

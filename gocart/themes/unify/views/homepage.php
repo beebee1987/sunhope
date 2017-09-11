@@ -557,12 +557,16 @@
                         <h2>Our Clients</h2>
                     </div>
                     <ul class="owl-clients-v2">
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/national-geographic.png') ?>" alt=""></a></li>
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/inspiring.png') ?>" alt=""></a></li>
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/fred-perry.png') ?>" alt=""></a></li>
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/emirates.png') ?>" alt=""></a></li>
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/baderbrau.png') ?>" alt=""></a></li>
-                        <li class="item"><a href="#"><img src="<?php echo theme_img('clients/inspiring.png') ?>" alt=""></a></li>
+                        
+                         <?php 
+                            foreach ($clients as $client):                             
+                        ?>
+                        
+                        <li class="item"><a href="#"><img src="<?php echo base_url($client->logo.'?dummy='.rand()) ?>" title="<?php echo $client->company ?>"></a></li>
+                        
+                        <?php endforeach; 
+                        ?>     
+                                                
                     </ul>
                 </div>
             </div>
@@ -625,7 +629,7 @@
                             <li><i class="fa fa-home"></i> Working hours: 8am - 5pm (Monday - Saturday) </li>
                             <li><i class="fa fa-envelope"></i> <a href="sunhope9028@gmail.com">sunhope9028@gmail.com</a></li>
                             <li><i class="fa fa-envelope"></i> <a href="waichoon_lee@hotmail.com">waichoon_lee@hotmail.com</a></li>
-                            <li><i class="fa fa-globe"></i> <a href="www.sunhope.my">www.sunhope.my</a></li>
+                            <li><i class="fa fa-globe"></i> <a href="www.sunhope.com.my">www.sunhope.com.my</a></li>
                         </ul>
                     </div>
 
