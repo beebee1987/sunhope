@@ -5,11 +5,17 @@ Admin Project Language
 ******************************************/
 
 $lang['projects']				= 'Projects';
-$lang['project_form']			= 'Project Form';
+$lang['project_form']			= 'Project Pictures';
+$lang['project_form_edit']			= 'Project Pictures Form';
+$lang['project_category']			= 'Project Category';
+$lang['project_category_form']		= 'Project Category Form';
+$lang['category_name']		= 'Name';
 $lang['error_not_found']		= 'The requested project could not be found.';
 $lang['error_card_not_found']	= 'The requested member card could not be found.';
 $lang['no_projects']			= 'There are currently no projects.';
 $lang['confirm_delete_project']	= 'Are you sure you want to delete this project?';
+$lang['bulk_save']		= 'Bulk Save';
+$lang['add_new_category']		= 'Add New Category';
 $lang['add_new_project']		= 'Add New Project';
 $lang['code']					= 'Code';
 $lang['name']					= 'Name';
@@ -34,9 +40,13 @@ $lang['home']					= 'Home';
 $lang['branch']					= 'Branch';
 $lang['project_listing']		= 'Project Listing';
 
+$lang['seq_no']		= 'Sequence';
 
+$lang['confirm_delete_category']	= 'Are you sure you want to delete this category?';
 
+$lang['message_category_deleted']	= 'The category has been deleted.';
 $lang['message_project_deleted']	= 'The project has been deleted.';
+$lang['nothing']	= 'nothing.';
 $lang['message_project_uploaded']	= 'The image has been uploaded.';
 $lang['attributes']				= 'Attributes';
 $lang['applies_to']				= 'Applies To';
@@ -73,6 +83,8 @@ $lang['invalid_used_qty']		= 'Invalid because Used exceed Quantity';
 
 
 
+$lang['error_bulk_no_products']		= 'There are no projects selected to bulk update';
+$lang['message_bulk_update']		= 'Your projects have been updated.';
 
 $lang['best_photo_size']  		= 'Best photo size';
 $lang['max_file_size']  		= 'The maximum file size for uploads background image is';
