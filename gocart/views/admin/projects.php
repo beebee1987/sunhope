@@ -34,11 +34,11 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th><?php echo lang('name'); ?></th>
+                                            <!--th><?php echo lang('name'); ?></th-->
                                             <th><?php echo lang('image'); ?></th>
                                             <th><?php echo lang('category'); ?></th>
                                             <th><?php echo lang('seq_no'); ?></th>
-                                            <th><?php echo lang('description'); ?></th>
+                                            <!--th><?php echo lang('description'); ?></th-->
                                             <th><?php echo lang('status'); ?></th>	
                                             <th>
                                                 <span class="btn-group pull-right">
@@ -51,13 +51,13 @@
 <?php echo (count($vouchers) < 1) ? '<tr><td style="text-align:center;" colspan="4">' . lang('no_vouchers') . '</td></tr>' : '' ?>
                                         <?php foreach ($vouchers as $voucher): ?>
                                             <tr>
-                                                <td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][name]', 'value' => form_decode($voucher->name), 'class' => 'span1')); ?></td>
+                                                <!--td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][name]', 'value' => form_decode($voucher->name), 'class' => 'span1')); ?></td-->
                                                 <td><?php if ($voucher->url != ''): ?>
-                                                        <div style="text-align:center; padding:2px; border:1px solid #ccc;"><img src="<?php echo base_url($voucher->smaller_url); ?>" width="80px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
+                                                        <div style="text-align:center; padding:2px; border:1px solid #ccc;"><img src="<?php echo base_url($voucher->smaller_url); ?>" width="40px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
     <?php endif; ?>	</td>
                                                 <td><?php echo form_dropdown('voucher[' . $voucher->id . '][category]', $categorys, set_value('category', $voucher->category), 'class="span2"'); ?></td>
                                                 <td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][seq_no]', 'value' => form_decode($voucher->seq_no), 'class' => 'span1')); ?></td>
-                                                <td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][description]', 'value' => form_decode($voucher->description), 'class' => 'span1')); ?></td>
+                                                <!--td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][description]', 'value' => form_decode($voucher->description), 'class' => 'span1')); ?></td-->
                                                 <td>
     <?php
     $options = array(
