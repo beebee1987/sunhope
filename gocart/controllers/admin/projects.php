@@ -20,7 +20,8 @@ class Projects extends Admin_Controller {
 	{
 //            if($upload_true){
 //                $this->session->set_flashdata('message', lang('message_project_deleted'));
-//            }
+//            }$
+            $category_list = [];
             $data['selectcategory']					= '';
             $count  = 0 ; 
 		$data['page_title']	= lang('project_form');
