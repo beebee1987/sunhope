@@ -226,7 +226,17 @@ $this->load->helper('text');
             if (!is_dir($folderName)) {
                     mkdir($folderName, 0777, TRUE);
                     //mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
-            }	
+            }
+            $orifolderName = 'uploads/project/original';
+            if (!is_dir($orifolderName)) {
+                    mkdir($orifolderName, 0777, TRUE);
+                    //mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
+            }
+            $smallfolderName = 'uploads/project/small';
+            if (!is_dir($smallfolderName)) {
+                    mkdir($smallfolderName, 0777, TRUE);
+                    //mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
+            }
              $dbHost = 'localhost';
             $dbUsername = 'root';
             $dbPassword = '';
