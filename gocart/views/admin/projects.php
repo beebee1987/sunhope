@@ -100,8 +100,6 @@
     var myDropzone = new Dropzone("#my-dropzone", {
         maxFilesize: 100, maxThumbnailFilesize: 100, createImageThumbnails: true,
         url: "<?php echo base_url() ?>admin/projects/uploadImage",
-        thumbnailWidth: "50",
-        thumbnailHeight: "50",
         acceptedFiles: "image/*",
         init: function () {
             this.on("complete", function (file) {
