@@ -19,6 +19,15 @@ CREATE TABLE `clients` (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `project_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(225) DEFAULT NULL,
+  `desc` varchar(225) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `projects_products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT NULL,
@@ -26,6 +35,9 @@ CREATE TABLE `projects_products` (
   `category` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `upload_date` date DEFAULT NULL,
-  `Status` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `status` varchar(20) DEFAULT NULL,
+  `smaller_url` varchar(255) DEFAULT NULL,
+  `seq_no` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;

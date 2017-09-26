@@ -67,6 +67,9 @@ $lang['common_deduct_point'] = 'Deduct Point';
 $lang['common_check_balance'] = 'Check Balance';
 $lang['common_point_listing'] = 'Branch Point Listing';
 $lang['common_point_form'] 	= 'Add Branch Point';
+$lang['common_project'] 	= 'Projects';
+$lang['common_category'] 	= 'Project Category';
+$lang['common_category_form'] 	= 'Add Category';
 
 
 

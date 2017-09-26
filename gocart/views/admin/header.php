@@ -162,7 +162,9 @@
                 <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'projects/form') ? 'class="active"' : ''; ?>>
                     <a href="#"><i class="fa fa-vimeo-square"></i> <span class="nav-label"><?php echo lang('common_projects');?></span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="<?php echo $admin_url;?>projects/form"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_forms') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
+                        <li><a href="<?php echo $admin_url;?>projects"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_project') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
+                        <li><a href="<?php echo $admin_url;?>projectcategorys"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_category') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
+                        <li><a href="<?php echo $admin_url;?>projectcategorys/form"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_category_form') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
                     </ul>
                 </li>
                                                        

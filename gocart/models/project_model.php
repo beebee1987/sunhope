@@ -24,8 +24,8 @@ projects_products
 
 class Project_model extends CI_Model 
 {
-
-	function save($project)
+    
+        function save($project)
 	{
 		if(!$project['id']) 
 		{
@@ -49,6 +49,32 @@ class Project_model extends CI_Model
 	function update_project($id, $data)
 	{
 		$this->db->where('id', $id)->update('projects_products', $data);
+	}
+
+	function savecategory($project)
+	{
+		if(!$project['id']) 
+		{
+			return $this->add_projectcategory($project);
+		} 
+		else 
+		{
+			$this->update_projectcategory($project['id'], $project);
+			return $project['id'];
+		}
+	}
+
+	// add project, returns id
+	function add_projectcategory($data) 
+	{
+		$this->db->insert('project_category', $data);
+		return $this->db->insert_id();
+	}
+	
+	// update project
+	function update_projectcategory($id, $data)
+	{
+		$this->db->where('id', $id)->update('project_category', $data);
 	}
 	
 	// delete project
@@ -106,14 +132,6 @@ class Project_model extends CI_Model
 	// get projects list, sorted by start_date (default), end_date
 	function get_projects($sort=NULL, $current_admin=NULL, $is_form = false) 
 	{
-		// if($is_form){
-		// 	$this->db->where('projects.active', 1);		
-		// }
-		
-		//$this->db->select(" branch.name as branch_name ,projects.* ");
-		// for merchant || branch can view only own data
-		
-		
 		return $this->db->get('projects_products')->result();
 	}
 	
@@ -133,7 +151,42 @@ class Project_model extends CI_Model
 	// get project details, by id
 	function get_project($id)
 	{
-		return $this->db->where('id', $id)->get('projects')->row();
+		return $this->db->where('id', $id)->get('projects_products')->row();
+	}
+        
+        // get projects list, sorted by start_date (default), end_date
+	function get_projectcategorys($sort=NULL, $current_admin=NULL, $is_form = false) 
+	{
+		return $this->db->get('project_category')->result();
+	}
+        
+        function get_projectcategorys_list($sort=NULL, $current_admin=NULL, $is_form = false)
+        {    	
+
+            $branch = $this->db->get('project_category')->result_array();
+            // unserialize the field data       
+
+            return $branch;
+        }   
+	
+	// get project details, by id
+	function get_projectcategory($id)
+	{
+		return $this->db->where('id', $id)->get('project_category')->row();
+	}
+        
+        function delete_category($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('project_category');
+	
+		// delete children
+		$this->remove_product($id);
+	}
+        
+        function get_project_by_url($url)
+	{
+		return $this->db->where('url', $url)->get('projects_products')->row();
 	}
 	
 	// get project details, by code
@@ -210,11 +263,11 @@ class Project_model extends CI_Model
 	// remove product from project. Product id as null for removing all products
 	function remove_product($project_id, $prod_id=NULL)
 	{
-		$where = array('project_id'=>$project_id);
+		$where = array('id'=>$project_id);
 		
 		if(!is_null($prod_id))
 		{
-			$where['product_id'] = $prod_id;
+			$where['id'] = $prod_id;
 		}
 			
 		$this->db->where($where);
