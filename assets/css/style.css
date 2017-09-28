@@ -8560,3 +8560,10 @@ body.md-skin {
     margin: 0;
   }
 }
+
+
+.logo_pos{
+  position: absolute; 
+  top: -20px; 
+  left: -20px; 
+}

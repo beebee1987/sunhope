@@ -1,1 +1,19 @@
 /* Add here all your css styles (customizations) */
+#logo_pos{
+  position: absolute; 
+  top: -20px; 
+  left: -20px; 
+}
+
+.sunhope_title{
+   margin-left: 80px;
+   color: #00375f;
+}
+
+@media (max-width: 767px) {
+  #logo_pos{
+	  position: absolute; 
+	  margin-left: auto;
+	  margin-right: auto;
+  }
+}

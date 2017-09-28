@@ -51,6 +51,7 @@
     -->
     <body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-project dark">
         <!--=== Header ===-->
+
         <nav class="one-page-header navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="menu-container page-scroll">
@@ -62,7 +63,8 @@
                     </button>
 
                     <a class="navbar-brand" href="#intro">
-                        <span>Sun Hope Industry Sdn Bhd</span> <span style="font-size: 12px;">(Sun Hope Engineering)</span>
+                        <div id="logo_pos"><img src="<?php echo base_url('assets/img/logo.png');?>" width="80px"></div>
+                        <span class="sunhope_title"><b>Sun Hope Industry Sdn Bhd</b></span> <span style="font-size: 14px;"><b>(Sun Hope Engineering)</b></span>
                         <!-- <img src="assets/img/logo1.png" alt="Logo"> -->
                     </a>
                 </div>

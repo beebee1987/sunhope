@@ -46,7 +46,7 @@
 				        </div>
 				    <?php endif; ?>
 				
-            <img src="<?php echo base_url('assets/img/logo.jpg');?>" width="120px">
+            <img src="<?php echo base_url('assets/img/logo.png');?>" width="120px">
             
             </div>
             <h3>Welcome to Sunhope Industry Sdn Bhd</h3>

@@ -79,6 +79,15 @@ class Projects extends Admin_Controller {
 
 		$this->load->helper(array('form', 'date', 'url'));
 		
+                $folderName = 'uploads/project/';
+                $folderNameOri = 'uploads/project/original/';
+                $folderNameSmaller = 'uploads/project/smaller/';
+		$config['upload_path']		= $folderNameOri;	
+		$config['allowed_types']	= 'gif|jpg|png';
+		$config['max_size']			= $this->config->item('size_limit');
+		$config['encrypt_name']		= true;
+		$this->load->library('upload', $config);
+                
 		$this->load->library('form_validation');
 		
 		$categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
@@ -100,7 +109,8 @@ class Projects extends Admin_Controller {
 		$data['id']					= '';
 		$data['name']					= '';
                 $data['description']				= '';
-                $data['url']					= '';
+//                $data['url']					= '';
+                $data['smaller_url']				= '';
                 $data['category']				= '';
                 $data['seq_no']					= '';
                 $data['status']					= '';
@@ -124,7 +134,8 @@ class Projects extends Admin_Controller {
 			$data['id']					= $project->id;
 			$data['name']					= $project->name;
 			$data['description']				= $project->description;
-			$data['url']					= $project->url;
+//			$data['url']					= $project->url;
+			$data['smaller_url']                            = $project->smaller_url;
 			$data['category']				= $project->category;
 			$data['seq_no']					= $project->seq_no;
 			$data['status']                                 = $project->status;
@@ -138,12 +149,14 @@ class Projects extends Admin_Controller {
 //			$this->form_validation->set_rules('branch_id', 'lang:branch', 'trim|required');
 //		endif;		
 			
-		$this->form_validation->set_rules('name', 'lang:name', 'trim|required');
+//		$this->form_validation->set_rules('name', 'lang:name', 'trim|required');
 //		$this->form_validation->set_rules('max_uses', 'lang:max_uses', 'trim|numeric');
-		$this->form_validation->set_rules('description', 'lang:description', 'trim');
+//		$this->form_validation->set_rules('description', 'lang:description', 'trim');
 		$this->form_validation->set_rules('category', 'lang:category', 'trim');
                 $this->form_validation->set_rules('seq_no', 'lang:seq_no', 'trim|numeric');
                 $this->form_validation->set_rules('status', 'lang:status', 'trim');
+		$this->form_validation->set_rules('smaller_url', 'lang:image', 'trim');
+//		$this->form_validation->set_rules('url', 'lang:image', 'trim');
 		
 	
 		if ($this->form_validation->run() == FALSE)
@@ -153,15 +166,70 @@ class Projects extends Admin_Controller {
 		else
 		{
                     $this->load->helper('text');
-                    
+                    $uploaded	= $this->upload->do_upload('smaller_url');
                     $save['id']					= $id;
-                    $save['name']				= $this->input->post('name');
-                    $save['description']			= $this->input->post('description');
-                    $save['url']				= $this->input->post('url');
+//                    $save['name']				= $this->input->post('name');
+//                    $save['description']			= $this->input->post('description');
+//                    $save['url']				= $this->input->post('url');
+//                    $save['smaller_url']			= $this->input->post('smaller_url');
                     $save['category']				= $this->input->post('category');
                     $save['seq_no']				= $this->input->post('seq_no');
                     $save['status']				= $this->input->post('status');
+                    
+                    if ($id)
+                    {	
+                            //delete the original file if another is uploaded
+                            if($uploaded)
+                            {
+                                    if($data['image'] != '')
+                                    {
+                                            //$file = 'uploads/'.$data['image'];
+                                            //$config['upload_path'] = FCPATH . 'uploads/';						 						
+
+                                            $file = $folderName.$data['image'];												
+
+                                            //delete the existing file if needed
+                                            if(file_exists($file))
+                                            {
+                                                    unlink($file);
+                                            }
+                                    }
+                            }
+
+                    }
+                    else
+                    {
+                            if(!$uploaded)
+                            {
+                                    $data['error']	= $this->upload->display_errors();
+                                    $this->view(config_item('admin_folder').'/voucher_form', $data);
+                                    return; //end script here if there is an error
+                            }
+                    }
+                    
+                    if($uploaded)
+                    {
+                        $image			= $this->upload->data();
+                        $save['url']  = $folderNameOri.$image['file_name'];
                         
+                        $this->load->library('image_lib');
+                        $config['image_library'] = 'gd2';
+                        $config['source_image'] = $folderNameOri.$image['file_name'];       
+    //                    $config['create_thumb'] = TRUE;
+                        $config['maintain_ratio'] = TRUE;
+                        $config['width'] = 373;
+                        $config['height'] = 280;
+                        $config['new_image'] = $folderNameSmaller;               
+                        $this->image_lib->initialize($config);
+                        if(!$this->image_lib->resize())
+                        { 
+                            echo $this->image_lib->display_errors();
+                        } 
+                        $save['smaller_url']  = $folderNameSmaller.$image['file_name'];
+                    }
+                    
+                    
+                    
                     $this->Project_model->save($save);
 
                     // We're done
@@ -232,7 +300,7 @@ $this->load->helper('text');
                     mkdir($orifolderName, 0777, TRUE);
                     //mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
             }
-            $smallfolderName = 'uploads/project/small';
+            $smallfolderName = 'uploads/project/smaller';
             if (!is_dir($smallfolderName)) {
                     mkdir($smallfolderName, 0777, TRUE);
                     //mkdir('./uploads/coupon/' . $today_date.'/thumbs', 0777, TRUE);
