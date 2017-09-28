@@ -103,7 +103,9 @@
         acceptedFiles: "image/*",
         init: function () {
             this.on("complete", function (file) {
-                window.location.replace("<?php echo base_url() ?>admin/projects");
+                if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                    window.location.replace("<?php echo base_url() ?>admin/projects");
+                }
             });
         }, sending: function (file, xhr, formData) {
             formData.append('sscategory', $("#selected-category").val());
