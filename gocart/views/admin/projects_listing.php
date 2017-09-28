@@ -105,12 +105,12 @@
         init: function () {
             this.on("complete", function (file) {
                 if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-                    window.location.replace("<?php echo base_url() ?>admin/projects"+"/listing/"+$("#selected-category").val());
+                    window.location.replace("<?php echo base_url() ?>admin/projects"+"/"+$("#selected-category").val());
                 }
             });
         }, sending: function (file, xhr, formData) {
             formData.append('sscategory', $("#selected-category").val());
-
+//formData.append('sscategory', <?php echo  $category; ?>);
         },
     });
     function myFunction() {
