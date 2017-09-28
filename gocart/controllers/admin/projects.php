@@ -43,6 +43,36 @@ class Projects extends Admin_Controller {
                 
 	}
         
+        function listing($upload_category = '')
+	{
+//            if($upload_true){
+//                $this->session->set_flashdata('message', lang('message_project_deleted'));
+//            }
+            $data['selectcategory']					= '';
+            $count  = 0 ; 
+		$data['page_title']	= lang('project_form');
+                $data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
+                 $categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
+                 foreach($categorys as $category)
+		{
+			$category_list[$category['name']] = $category['name'];
+		}
+		$data['categorys'] = $category_list;	
+                $data['category'] = '';	
+                if($upload_category){
+                    $data['category'] = $upload_category;
+                }
+                
+                $categoryss = $this->Project_model->get_projectcategorys(NULL, $this->current_admin);
+		$data['categoryss'] = $categoryss;
+                
+		//filter access and branch out automatically
+//		$data['projects']	= $this->Project_model->get_projects(NULL, $this->current_admin);		
+		//$data['projects']	= $this->Project_model->get_projects();	
+		$this->view($this->config->item('admin_folder').'/projects', $data);
+                
+	}
+        
         function deletesuccess($delete_true = true){
             if($delete_true){
                 $this->session->set_flashdata('message', lang('message_project_deleted'));
