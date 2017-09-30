@@ -63,85 +63,12 @@
                         <li ><a href="<?php echo $admin_url?>">Overwiew</a></li>                        
                     </ul>
                 </li>
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'customers') ? 'class="active"' : ''; ?>>
-                    <a href="<?php echo $admin_url?>customers"><i class="fa fa-users"></i> <span class="nav-label"><?php echo lang('common_customers') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-                </li>
-                <?php if($this->auth->check_access('Admin') && $current_admin['branch'] == 0) : ?>
-	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'slider') ? 'class="active"' : ''; ?>>
-	                    <a href="<?php echo $admin_url?>slider"><i class="fa fa-picture-o"></i> <span class="nav-label"><?php echo lang('common_slider') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                </li>                                
-	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'company') ? 'class="active"' : ''; ?>>
-	                    <a href="<?php echo $admin_url?>company"><i class="fa fa-building-o"></i> <span class="nav-label"><?php echo lang('common_company') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                </li>                
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'latest_news') ? 'class="active"' : ''; ?>>
-                    <a href="<?php echo $admin_url?>latest_news"><i class="fa fa-newspaper-o"></i> <span class="nav-label"><?php echo lang('common_news') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-                </li>
-                <?php endif;?>
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'credit') ? 'class="active"' : ''; ?>>
-                    <a href="#l"><i class="fa fa-copyright"></i> <span class="nav-label"><?php echo lang('common_credits');?></span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="<?php echo $admin_url?>credit/check_balance"><i class="fa fa-search-plus"></i> <span class="nav-label"><?php echo lang('common_check_balance') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                                           
-                    	<li><a href="<?php echo $admin_url?>credit"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_credits') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>credit/topup_credit_form"><i class="fa fa-plus-square-o"></i> <span class="nav-label"><?php echo lang('common_topup_credit') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>credit/consume_form"><i class="fa fa-minus-square-o"></i> <span class="nav-label"><?php echo lang('common_consumption') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>credit/deduct_credit_form"><i class="fa fa-minus-circle"></i> <span class="nav-label"><?php echo lang('common_deduct_credit') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                        
-                    </ul>
-                </li>                                
-                
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'point') ? 'class="active"' : ''; ?>>
-                    <a href="#l"><i class="fa fa-rub"></i> <span class="nav-label"><?php echo lang('common_point');?></span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                    	<li><a href="<?php echo $admin_url?>credit/check_balance"><i class="fa fa-search-plus"></i> <span class="nav-label"><?php echo lang('common_check_balance') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                                           
-                        <li><a href="<?php echo $admin_url?>point"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_point') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>point/add_point_form"><i class="fa fa-plus-square-o"></i> <span class="nav-label"><?php echo lang('common_add_point') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>point/deduct_point_form"><i class="fa fa-minus-circle"></i> <span class="nav-label"><?php echo lang('common_deduct_point') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                                                
-                        <li><a href="<?php echo $admin_url?>point/branch_point"><i class="fa fa-search-plus"></i> <span class="nav-label"><?php echo lang('common_point_listing') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url?>point/branch_point_form"><i class="fa fa-search-plus"></i> <span class="nav-label"><?php echo lang('common_point_form') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                    </ul>
-                </li>
-                
-                <?php if($this->auth->check_access('Admin') && $current_admin['branch'] == 0 ) : ?>
-	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'card') ? 'class="active"' : ''; ?>>
-	                    <a href="<?php echo $admin_url?>card"><i class="fa fa-credit-card"></i> <span class="nav-label"><?php echo lang('common_card') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                </li>
-                <?php endif;?>
-                
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'vouchers') ? 'class="active"' : ''; ?>>
-                    <a href="#"><i class="fa fa-vimeo-square"></i> <span class="nav-label"><?php echo lang('common_vouchers');?></span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="<?php echo $admin_url;?>vouchers"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_vouchers') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url;?>vouchers/form"><i class="fa fa-plus-square-o"></i> <span class="nav-label"><?php echo lang('common_voucher_form') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url;?>vouchers/process_voucher"><i class="fa fa-minus-square-o"></i> <span class="nav-label"><?php echo lang('common_process_vouchers') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                        
-                    </ul>
-                </li>
-                
-                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'coupons') ? 'class="active"' : ''; ?>>
-                    <a href="#"><i class="fa fa-paperclip"></i> <span class="nav-label"><?php echo lang('common_coupons');?></span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="<?php echo $admin_url;?>coupons"><i class="fa fa-list-ol"></i> <span class="nav-label"><?php echo lang('common_coupons') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-                        <li><a href="<?php echo $admin_url;?>coupons/form"><i class="fa fa-plus-square-o"></i> <span class="nav-label"><?php echo lang('common_coupon_form') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                        
-                        <li><a href="<?php echo $admin_url;?>coupons/process_coupon"><i class="fa fa-minus-square-o"></i> <span class="nav-label"><?php echo lang('common_process_coupons') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                        
-                    </ul>
-                </li>                                
-                
+                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'slider') ? 'class="active"' : ''; ?>>
+                        <a href="<?php echo $admin_url?>slider"><i class="fa fa-picture-o"></i> <span class="nav-label"><?php echo lang('common_slider') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
+                </li>  
                 <?php if($this->auth->check_access('Admin')) : ?>
 	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'admin') ? 'class="active"' : ''; ?>>
 	                    <a href="<?php echo $admin_url;?>admin"><i class="fa fa-user-md"></i> <span class="nav-label"><?php echo lang('common_administrators') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                </li>
-	                
-	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'branch') ? 'class="active"' : ''; ?>>
-	                    <a href="<?php echo $admin_url?>branch"><i class="fa fa-building"></i> <span class="nav-label"><?php echo lang('common_branch') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                </li>
-	                
-	                <li <?php echo (isset($activemenu) && !empty($activemenu) && $activemenu == 'reports') ? 'class="active"' : ''; ?>>
-	                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label"><?php echo lang('common_reports') ?><span class="fa arrow"></span> <!--span class="label label-primary pull-right">NEW</span--></a>
-	                    <ul class="nav nav-second-level">
-	                        <li><a href="<?php echo $admin_url;?>reports/daily_reports"><i class="fa fa-bars"></i> <span class="nav-label"><?php echo lang('common_daily_trx') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-	                        <li><a href="<?php echo $admin_url;?>reports/monthly_reports"><i class="fa fa-money"></i> <span class="nav-label"><?php echo lang('common_monthly_trx') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-	                        <li><a href="<?php echo $admin_url;?>reports/print_reports"><i class="fa fa-print"></i> <span class="nav-label"><?php echo lang('common_print_statement') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-	                        <li><a href="<?php echo $admin_url;?>reports/voucher_reports"><i class="fa fa-money"></i> <span class="nav-label"><?php echo lang('common_voucher_listing') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>
-	                        <li><a href="<?php echo $admin_url;?>reports/coupon_reports"><i class="fa fa-money"></i> <span class="nav-label"><?php echo lang('common_coupon_listing') ?></span> <!--span class="label label-primary pull-right">NEW</span--></a></li>                                                                                                
-	                    </ul>
 	                </li>
                 <?php endif;?>
                 

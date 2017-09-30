@@ -21,6 +21,7 @@ class Projects extends Admin_Controller {
 //            if($upload_true){
 //                $this->session->set_flashdata('message', lang('message_project_deleted'));
 //            }$
+            $data['category'] = "";
             $category_list = [];
             $data['selectcategory']					= '';
             $count  = 0 ; 
