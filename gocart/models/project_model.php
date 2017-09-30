@@ -141,10 +141,10 @@ class Project_model extends CI_Model
 		// 	$this->db->where('projects.active', 1);		
 		// }
 		
-		//$this->db->select(" branch.name as branch_name ,projects.* ");
-		// for merchant || branch can view only own data
-		
+		$this->db->select(" project_category.name as category_name, projects_products.* ");
+		$this->db->join("project_category", "category=project_category.id");
 		$this->db->group_by('projects_products.category');
+                
 		return $this->db->get('projects_products')->result();
 	}
 

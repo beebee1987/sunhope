@@ -10,7 +10,7 @@
 <!--                            <select id = 'selected-category' name='selected-category' class="form-control m-b">
                                 <?php
                                 foreach ($categoryss as $row) {
-                                    echo '<option value="' . $row->name . '">' . $row->name . '</option>';
+                                    echo '<option value="' . $row->id . '">' . $row->name . '</option>';
                                 }
                                 ?>
                             </select>-->

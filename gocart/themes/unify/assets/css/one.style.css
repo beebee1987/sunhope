@@ -35,7 +35,7 @@ li a {
 }
 
 a {
-  color: #6F518A;
+  color: #000;
   text-decoration: none;
 }
 
@@ -49,13 +49,13 @@ a:focus {
   text-decoration: none;
 }
 a:hover {
-  color: #6F518A;
+  color: #000;
   text-decoration: underline;
 }
 
 ::selection {
   color: #fff;
-  background: #6F518A;
+  background: #000;
 }
 
 .navbar-fixed-bottom .navbar-collapse,
@@ -109,7 +109,7 @@ a:hover {
 }
 
 .one-page-header .navbar-brand span {
-  color: #6F518A !important;
+  color: #000 !important;
 }
 
 @media (max-width: 768px) {
@@ -180,11 +180,11 @@ a:hover {
 
 .one-page-header .navbar-nav > li > a:hover {
   z-index: 1;
-  color: #6F518A;
+  color: #000;
 }
 
 .one-page-header .navbar-nav > li > a:focus {
-  color: #6F518A;
+  color: #000;
 }
 
 .one-page-header .navbar-nav > .active > a,
@@ -198,7 +198,7 @@ a:hover {
 .one-page-header.top-nav-collapse .dropdown-menu > .active > a:focus {
   z-index: 1;
   background: none;
-  color: #6F518A !important;
+  color: #000 !important;
 }
 
 /*Responsive Navbar*/
@@ -289,7 +289,7 @@ a:hover {
   line-height: 20px;
 }
 .log-reg-block a:hover {
-  color: #6F518A;
+  color: #000;
   z-index: 1;
 }
 .log-reg-block a:before {
@@ -383,7 +383,7 @@ a:hover {
     color: #777;
   }
   .one-page-header.top-nav-collapse .dropdown-menu > li > a:hover {
-    color: #6F518A;
+    color: #000;
   }
 }
 @media (max-width: 991px) {
@@ -400,7 +400,7 @@ a:hover {
   }
   .one-page-header .dropdown-menu a:hover,
   .one-page-header.top-nav-collapse .dropdown-menu > li > a:hover {
-    color: #6F518A !important;
+    color: #000 !important;
   }
 }
 
@@ -477,8 +477,8 @@ a:hover {
 .log-reg-block-simple .btn-u:hover,
 .top-nav-collapse .log-reg-block-simple .btn-u:hover {
   color: #fff;
-  background: #6F518A;
-  border-color: #6F518A;
+  background: #000;
+  border-color: #000;
 }
 
 @media (max-width: 991px) {
@@ -576,7 +576,7 @@ a:hover {
 }
 
 .one-page-header.top-nav-collapse .navbar-toggle:hover .icon-bar {
-  background: #6F518A;
+  background: #000;
 }
 
 /*Intro Section
@@ -625,17 +625,17 @@ a:hover {
 }
 
 .cube-portfolio #filters-container .cbp-filter-item-active {
-  background: #6F518A;
-  border-color: #6F518A;
+  background: #000;
+  border-color: #000;
 }
 
 .cube-portfolio .cbp-l-filters-button .cbp-filter-counter {
   color: #fff;
-  background: #6F518A;
+  background: #000;
 }
 
 .cube-portfolio .cbp-l-filters-button .cbp-filter-counter:before {
-  border-top-color: #6F518A;
+  border-top-color: #000;
 }
 
 .promo-section {

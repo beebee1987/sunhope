@@ -63,7 +63,7 @@
                     </button>
 
                     <a class="navbar-brand" href="#intro">
-                        <div id="logo_pos"><img src="<?php echo base_url('assets/img/logo.png');?>" width="80px"></div>
+                        <div id="logo_pos"><img src="<?php echo base_url('assets/img/logo.png');?>" width="150px"></div>
                         <span class="sunhope_title"><b>Sun Hope Industry Sdn Bhd</b></span> <span style="font-size: 14px;"><b>(Sun Hope Engineering)</b></span>
                         <!-- <img src="assets/img/logo1.png" alt="Logo"> -->
                     </a>
@@ -108,10 +108,22 @@
             <div class="fullscreenbanner-container">
                 <div class="fullscreenbanner">
                     <ul>
+                        <?php 
+                            foreach ($sliders as $slider):                             
+                        ?>
+                        
+                        <li data-transition="curtain-<?php echo $slider['id'] ?>" data-title="<?php echo $slider['title'] ?>">
+                            <img src="<?php echo base_url($slider['image']); ?>" alt="slidebg<?php echo $slider['id'] ?>" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        </li>
+                            
+                        <?php endforeach; 
+                        ?>  
+                        
+                        
                         <!-- SLIDE 1 -->
-                        <li data-transition="curtain-1" data-title="Slide 1">
+<!--                        <li data-transition="curtain-1" data-title="Slide 1">-->
                             <!-- MAIN IMAGE -->
-                            <img src="<?php echo base_url('uploads/slider/slider3.jpg'); ?>" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                            <!--<img src="<?php echo base_url('uploads/slider/slider3.jpg'); ?>" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">-->
 
                             <!-- LAYERS -->
                             <!-- <div class="tp-caption rs-caption-1 sft start"
@@ -124,19 +136,8 @@
                                  data-endspeed="300">
                                 WE ARE SUN HOPE ENGINEERING COMPANY
                             </div> -->
-
-
-                        </li>
-                        <li data-transition="curtain-2" data-title="Slide 2">
-                            <!-- MAIN IMAGE -->
-                            <img src="<?php echo base_url('uploads/slider/slider6.jpg'); ?>" alt="slidebg2" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                        </li>
-
-                        <li data-transition="curtain-3" data-title="Slide 3">
-                            <!-- MAIN IMAGE -->
-                            <img src="<?php echo base_url('uploads/slider/DSC03087.JPG'); ?>" alt="slidebg3" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                        </li>
-
+                        <!--</li>-->
+                        
 
 
 
@@ -324,7 +325,7 @@
                 <div class="row service-box-v1">
                     <div class="col-md-3 col-sm-6">                    
                         <div class="service-block service-block-default">
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-gear"></i>
                             <h2 class="heading-sm">Our Fabrication</h2>
                             <ul class="list-unstyled">
                                 <li>Cutting</li>
@@ -340,7 +341,7 @@
                     
                     <div class="col-md-3 col-sm-6">
                         <div class="service-block service-block-default">
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-fire"></i>
                             <h2 class="heading-sm">Welding Service</h2>
                             <ul class="list-unstyled">
                                 <li>MIG Welding</li>
@@ -363,7 +364,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6">    
                         <div class="service-block service-block-default">
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-heart"></i>
                             <h2 class="heading-sm">Other Service</h2>
                             <ul class="list-unstyled">
                                 <li>Consultancy</li>
@@ -516,7 +517,7 @@
                         <?php 
                             foreach ($categories as $category):                             
                         ?>
-                        <div data-filter=".<?php echo $category->category ?>" class="cbp-filter-item"> <?php echo $category->category ?> </div>
+                        <div data-filter=".<?php echo $category->category ?>" class="cbp-filter-item"> <?php echo $category->category_name ?> </div>
                         <?php endforeach; 
                         ?>  
 
@@ -534,7 +535,7 @@
                         <div class="cbp-item <?php echo $project->category ?> print">
                             <a class="cbp-captionclients" data-title="FBK<br>by Jack Lee">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo base_url($project->url.'?dummy='.rand()) ?>" alt="">
+                                    <img src="<?php echo base_url($project->smaller_url.'?dummy='.rand()) ?>" alt="">
                                 </div>
                             </a>
                         </div>
@@ -564,7 +565,7 @@
                             foreach ($clients as $client):                             
                         ?>
                         
-                        <li class="item"><a href="#"><img src="<?php echo base_url($client->logo.'?dummy='.rand()) ?>" title="<?php echo $client->company ?>"></a></li>
+                        <li class="item"><a><img src="<?php echo base_url($client->logo.'?dummy='.rand()) ?>" title="<?php echo $client->company ?>"></a></li>
                         
                         <?php endforeach; 
                         ?>     

@@ -30,7 +30,7 @@ class Projects extends Admin_Controller {
                  $categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
                  foreach($categorys as $category)
 		{
-			$category_list[$category['name']] = $category['name'];
+			$category_list[$category['id']] = $category['name'];
 		}
 		$data['categorys'] = $category_list;	
                 
@@ -56,7 +56,7 @@ class Projects extends Admin_Controller {
                  $categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
                  foreach($categorys as $category)
 		{
-			$category_list[$category['name']] = $category['name'];
+			$category_list[$category['id']] = $category['name'];
 		}
 		$data['categorys'] = $category_list;	
                 $data['category'] = '';	
