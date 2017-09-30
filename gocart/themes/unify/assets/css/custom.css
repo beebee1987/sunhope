@@ -1,19 +1,82 @@
 /* Add here all your css styles (customizations) */
-#logo_pos{
-  position: absolute; 
-  top: -20px; 
-  left: -20px; 
+@media (max-width: 1344px) {
+    #logo_pos{
+        position: absolute; 
+        top: -20px; 
+        left: -20px; 
+    }
+    
+    .sunhope_title{
+        display: block;
+        margin-left: 80px;
+        color: #00375f;
+    }
+    
+    .sunhope_title2{
+        display: block;
+        font-size: 20px; 
+        display: inline;
+    }
+    
+    .sunhope_title_mobile{
+        display: none;
+    }
+    
+    .sunhope_title_ipad{
+        display: none;
+    }
+    
+    .sunhope_title_mobile{
+        display: none;
+    }
 }
 
-.sunhope_title{
-   margin-left: 80px;
-   color: #00375f;
-}
+
 
 @media (max-width: 767px) {
-  #logo_pos{
-	  position: absolute; 
-	  margin-left: auto;
-	  margin-right: auto;
-  }
+    #logo_pos{
+        position: absolute; 
+        top: 0%;
+        left: 50%;
+    }
+    
+    #logo_pos img {
+        width: 75px;
+    }
+    
+    .sunhope_title{
+        display: none;
+    }
+    
+    .sunhope_title2{
+        display: none;
+    }
+    
+    .sunhope_title_ipad{
+        display: block;
+        font-size: 20px;
+    }
+    
+    .sunhope_title_mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 570px) {    
+    .sunhope_title{
+        display: none;
+    }
+    
+    .sunhope_title2{
+        display: none;
+    }
+    
+    .sunhope_title_ipad{
+        display: none;       
+    }
+    
+    .sunhope_title_mobile{
+        display: block;
+        font-size: 20px;
+    }
 }

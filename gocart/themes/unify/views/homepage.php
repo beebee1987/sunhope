@@ -63,8 +63,10 @@
                     </button>
 
                     <a class="navbar-brand" href="#intro">
-                        <div id="logo_pos"><img src="<?php echo base_url('assets/img/logo.png');?>" width="150px"></div>
-                        <span class="sunhope_title"><b>Sun Hope Industry Sdn Bhd</b></span> <span style="font-size: 14px;"><b>(Sun Hope Engineering)</b></span>
+                        <div id="logo_pos"><img src="<?php echo base_url('assets/img/logo.png');?>" width="130px"></div>
+                        <span class="sunhope_title"><b>Sun Hope Industry Sdn Bhd</b><div class="sunhope_title2">&nbsp; (Sun Hope Engineering)</div></span> 
+                        <span class="sunhope_title_ipad"><b>Sun Hope Industry Sdn Bhd</b><div style="font-size: 12px; margin-top: 5px;">(Sun Hope Engineering)</div></span>
+                        <span class="sunhope_title_mobile"><b>Sun Hope Industry</b><div style="font-size: 12px; margin-top: 5px;">(Sun Hope Engineering)</div></span>
                         <!-- <img src="assets/img/logo1.png" alt="Logo"> -->
                     </a>
                 </div>
