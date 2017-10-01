@@ -115,7 +115,7 @@
                         ?>
                         
                         <li data-transition="curtain-<?php echo $slider['id'] ?>" data-title="<?php echo $slider['title'] ?>">
-                            <img src="<?php echo base_url($slider['image']); ?>" alt="slidebg<?php echo $slider['id'] ?>" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                            <img style="min-width: 100%; min-height: 100%;" src="<?php echo base_url($slider['image']); ?>" alt="slidebg<?php echo $slider['id'] ?>" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
                         </li>
                             
                         <?php endforeach; 

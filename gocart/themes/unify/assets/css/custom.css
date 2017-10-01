@@ -36,12 +36,12 @@
 @media (max-width: 767px) {
     #logo_pos{
         position: absolute; 
-        top: 0%;
-        left: 50%;
+        top: -5px; 
+        left: 20px; 
     }
     
     #logo_pos img {
-        width: 75px;
+        width: 50px;
     }
     
     .sunhope_title{
@@ -55,6 +55,7 @@
     .sunhope_title_ipad{
         display: block;
         font-size: 20px;
+        margin-left: 70px;
     }
     
     .sunhope_title_mobile{
@@ -78,5 +79,6 @@
     .sunhope_title_mobile{
         display: block;
         font-size: 20px;
+        margin-left: 70px;
     }
 }
