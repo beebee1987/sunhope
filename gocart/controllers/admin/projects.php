@@ -9,8 +9,7 @@ class Projects extends Admin_Controller {
 		parent::__construct();
         
 		//$this->auth->check_access('Admin', true);
-		$this->load->model('Project_model');		
-		$this->load->model('Voucher_model');
+		$this->load->model('Project_model');	
 		$this->lang->load('project');
 		$this->load->helper('form');
 		$this->current_admin	= $this->session->userdata('admin');
@@ -26,7 +25,7 @@ class Projects extends Admin_Controller {
             $data['selectcategory']					= '';
             $count  = 0 ; 
 		$data['page_title']	= lang('project_form');
-                $data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
+                $data['projects']	= $this->Project_model->get_projects(NULL, $this->current_admin);
                  $categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
                  foreach($categorys as $category)
 		{
@@ -52,7 +51,7 @@ class Projects extends Admin_Controller {
             $data['selectcategory']					= '';
             $count  = 0 ; 
 		$data['page_title']	= lang('project_form');
-                $data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
+                $data['projects']	= $this->Project_model->get_projects(NULL, $this->current_admin);
                  $categorys = $this->Project_model->get_projectcategorys_list(NULL, $this->current_admin);
                  foreach($categorys as $category)
 		{
@@ -83,7 +82,7 @@ class Projects extends Admin_Controller {
         
         function bulk_save()
 	{
-		$projects	= $this->input->post('voucher');
+		$projects	= $this->input->post('project');
 		
 		if(!$projects)
 		{
@@ -126,13 +125,13 @@ class Projects extends Admin_Controller {
 //                $categoryss = json_decode($categorys, true);
 		foreach($categorys as $category)
 		{
-			$category_list[$category['name']] = $category['name'];
+			$category_list[$category['id']] = $category['name'];
 		}
 		$data['categorys'] = $category_list;		
 		
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 		
-		$this->voucher_id	= $id;
+		$this->project_id	= $id;
 		
 		$data['page_title']		= lang('project_form_edit');
 		
@@ -233,7 +232,7 @@ class Projects extends Admin_Controller {
                             if(!$uploaded)
                             {
                                     $data['error']	= $this->upload->display_errors();
-                                    $this->view(config_item('admin_folder').'/voucher_form', $data);
+                                    $this->view(config_item('admin_folder').'/project_form', $data);
                                     return; //end script here if there is an error
                             }
                     }
@@ -379,7 +378,7 @@ $this->load->helper('text');
                      ); 
                      var_dump($data);
                     $img_id = $this->Project_model->save($data); 
-                    //$data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
+                    //$data['projects']	= $this->Project_model->get_projects(NULL, $this->current_admin);
                     //insert file information into db table
     //                $conn->query("INSERT INTO projects_products (url,name, upload_date) VALUES('".$targetFile."','".$fileName."','".date("Y-m-d H:i:s")."')");
                 }
@@ -422,7 +421,7 @@ $this->load->helper('text');
         
 //        public function getData()
 //        {
-//            $data['vouchers']	= $this->Project_model->get_projects(NULL, $this->current_admin);
+//            $data['projects']	= $this->Project_model->get_projects(NULL, $this->current_admin);
 ////            redirect($this->config->item('admin_folder').'projects/form');
 ////            $this->form(false);
 ////            return $this->Project_model->get_projects(NULL, $this->current_admin);

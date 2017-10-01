@@ -22,7 +22,7 @@ function areyousure()
 		</tr>
 	</thead>
 	<tbody>
-	<?php echo (count($projectscategorys) < 1)?'<tr><td style="text-align:center;" colspan="4">'.lang('no_vouchers').'</td></tr>':''?>
+	<?php echo (count($projectscategorys) < 1)?'<tr><td style="text-align:center;" colspan="4">'.lang('no_project_category').'</td></tr>':''?>
 <?php foreach ($projectscategorys as $projectcategory):?>
 		<tr>
 			<td><?php echo  $projectcategory->name; ?></td>

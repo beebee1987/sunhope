@@ -49,29 +49,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php echo (count($vouchers) < 1) ? '<tr><td style="text-align:center;" colspan="4">' . lang('no_vouchers') . '</td></tr>' : '' ?>
-                                        <?php foreach ($vouchers as $voucher): ?>
+<?php echo (count($projects) < 1) ? '<tr><td style="text-align:center;" colspan="4">' . lang('no_projects') . '</td></tr>' : '' ?>
+                                        <?php foreach ($projects as $project): ?>
                                             <tr>
-                                                <!--td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][name]', 'value' => form_decode($voucher->name), 'class' => 'span1')); ?></td-->
-                                                <td><?php if ($voucher->url != ''): ?>
-                                                        <div style="text-align:center; padding:2px; border:1px solid #ccc;"><img src="<?php echo base_url($voucher->smaller_url); ?>" width="40px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
+                                                <!--td><?php echo form_input(array('name' => 'project[' . $project->id . '][name]', 'value' => form_decode($project->name), 'class' => 'span1')); ?></td-->
+                                                <td><?php if ($project->url != ''): ?>
+                                                        <div style="text-align:center; padding:2px; border:1px solid #ccc;"><img src="<?php echo base_url($project->smaller_url); ?>" width="40px" alt="current"/><br/><?php echo lang('current_file'); ?></div>
     <?php endif; ?>	</td>
-                                                <td><?php echo form_dropdown('voucher[' . $voucher->id . '][category]', $categorys, set_value('category', $voucher->category), 'class="span2"'); ?></td>
-                                                <td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][seq_no]', 'value' => form_decode($voucher->seq_no), 'class' => 'span1')); ?></td>
-                                                <!--td><?php echo form_input(array('name' => 'voucher[' . $voucher->id . '][description]', 'value' => form_decode($voucher->description), 'class' => 'span1')); ?></td-->
+                                                <td><?php echo form_dropdown('project[' . $project->id . '][category]', $categorys, set_value('category', $project->category), 'class="span2"'); ?></td>
+                                                <td><?php echo form_input(array('name' => 'project[' . $project->id . '][seq_no]', 'value' => form_decode($project->seq_no), 'class' => 'span1')); ?></td>
+                                                <!--td><?php echo form_input(array('name' => 'project[' . $project->id . '][description]', 'value' => form_decode($project->description), 'class' => 'span1')); ?></td-->
                                                 <td>
     <?php
     $options = array(
         'ACTIVE' => lang('enabled'),
         'INACTIVE' => lang('disabled')
     );
-    echo form_dropdown('voucher[' . $voucher->id . '][status]', $options, set_value('enabled', $voucher->status), 'class="span2"');
+    echo form_dropdown('project[' . $project->id . '][status]', $options, set_value('enabled', $project->status), 'class="span2"');
     ?>
                                                 </td>
                                                 <td>
                                                     <div class="btn-group" style="float:right;">
-                                                        <a class="btn btn-white btn-bitbucket" href="<?php echo site_url($this->config->item('admin_folder') . '/projects/form/' . $voucher->id); ?>"><i class="icon-pencil"></i> <?php echo lang('edit'); ?></a>
-                                                        <a class="btn btn-danger" href="<?php echo site_url($this->config->item('admin_folder') . '/projects/delete/' . $voucher->id); ?>" onclick="return areyousure();"><i class="icon-trash icon-white"></i> <?php echo lang('delete'); ?></a>
+                                                        <a class="btn btn-white btn-bitbucket" href="<?php echo site_url($this->config->item('admin_folder') . '/projects/form/' . $project->id); ?>"><i class="icon-pencil"></i> <?php echo lang('edit'); ?></a>
+                                                        <a class="btn btn-danger" href="<?php echo site_url($this->config->item('admin_folder') . '/projects/delete/' . $project->id); ?>" onclick="return areyousure();"><i class="icon-trash icon-white"></i> <?php echo lang('delete'); ?></a>
                                                     </div>
                                                 </td>
                                             </tr>
