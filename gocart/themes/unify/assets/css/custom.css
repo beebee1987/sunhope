@@ -1,5 +1,5 @@
 /* Add here all your css styles (customizations) */
-@media (max-width: 1344px) {
+@media (max-width: 1400px) {
     #logo_pos{
         position: absolute; 
         top: -20px; 
